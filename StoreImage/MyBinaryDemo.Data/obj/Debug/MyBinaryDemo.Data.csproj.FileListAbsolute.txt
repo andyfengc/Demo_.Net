@@ -1,0 +1,7 @@
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\bin\Debug\MyBinaryDemo.Data.dll.config
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\bin\Debug\MyBinaryDemo.Data.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\bin\Debug\MyBinaryDemo.Data.pdb
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\bin\Debug\EntityFramework.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\bin\Debug\EntityFramework.xml
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\obj\Debug\MyBinaryDemo.Data.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\MyBinaryDemo.Data\obj\Debug\MyBinaryDemo.Data.pdb

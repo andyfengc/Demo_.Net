@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script src="~/Scripts/dropzone.js"></script>
+
+    <script type="text/javascript">
+
+$(document).ready(function () {
+    $("#preview").fadeOut(15);
+    $("#refreshButton").click(function () {
+        var imageToLoad = $("#imageId").val();
+        if (imageToLoad.length > 0) {
+            $("#preview").attr("src", "/Document/Show/" + imageToLoad);
+            $("#preview").fadeIn();
+        }
+    });
+});
+
+    </script>
+
+}
+
+
+
+<form action="/Document/Upload" class="dropzone" id="my-awesome-dropzone"></form>
+
+<input type="text" name="imageId" id="imageId" />
+<button type="button" id="refreshButton">Update Image</button>
+<img src="/" style="display: none" id="preview" />

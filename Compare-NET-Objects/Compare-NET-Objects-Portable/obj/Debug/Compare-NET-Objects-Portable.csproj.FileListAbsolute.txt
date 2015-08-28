@@ -1,0 +1,10 @@
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\KellermanSoftware.Compare-Net-Objects-Portable.XML
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\KellermanSoftware.Compare-Net-Objects-Portable.dll
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\KellermanSoftware.Compare-Net-Objects-Portable.pdb
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\obj\Debug\Compare-NET-Objects-Portable.csprojResolveAssemblyReference.cache
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\obj\Debug\KellermanSoftware.Compare-Net-Objects-Portable.dll
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\obj\Debug\KellermanSoftware.Compare-Net-Objects-Portable.pdb
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\nunit.core.dll
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\nunit.core.interfaces.dll
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\nunit.util.dll
+C:\afeng\Workspace\.Net_Demo\Compare-NET-Objects\Compare-NET-Objects-Portable\bin\Debug\NUnit.VisualStudio.TestAdapter.dll

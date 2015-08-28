@@ -1,0 +1,970 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ShipWSSample.ShipWebReference.AccessorialType" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.AccountAddressType" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.AddressType" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAgAAAAAIIAAAAAAAgAAAQgAhQAAAAAAQAAE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ADLAddressType" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCAAAAAAAAAACAAIIAAAAAAAggAAQgIhAAAAAAAQAAE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.AlternateDeliveryAddressType" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAIAAAAQAAAAAAAACAAEIAACAABA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BillingUnitOfMeasurementType" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BillingWeightType" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAABAAAAAAAAACAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BillReceiverAddressType" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BillReceiverType" Collapsed="true">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BillShipperType" Collapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAQAAAAAAAAgAAAEAAAAAAAACBAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BillThirdPartyChargeType" Collapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.BlanketPeriodType" Collapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAEAAgAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CN22ContentType" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAEAAAAAAQAAAAAACQBEADAAgAACAACAAIQAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CN22FormType" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAFEQAAAAAAAAAAAAEAEEAABCBEAAAAgAgAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CodeDescriptionType" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CODType" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAIAAAAAAAgAAAAQAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CommodityType" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAEAQAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CompanyInfoType" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAAAAAAAAAAIAgAAQAEBAAgAAAAAMIIAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ContactInfoType" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAAAIAIAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ContactType" Collapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBgAAAAAAAAAAgAAAAIAAAQAAAAQAAAAAIAAAAABAAg=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CreditCardAddressType" Collapsed="true">
+    <Position X="20.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAIIAAAAAAAgAAAQgAhAAAAAAAQAAE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CreditCardType" Collapsed="true">
+    <Position X="22.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAACEAAAIEAAABAAQAAAAAACCQAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.CurrencyMonetaryType" Collapsed="true">
+    <Position X="24.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAABAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DDTCInformationType" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAACAABAIAAAAAAABAAABGAAAAAMgAEAAAgAQgQAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DeclaredValueType" Collapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DeliveryConfirmationType" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DimensionsType" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABIAAAAACAAABAEBAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DisclaimerType" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DryIceType" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAEAIwAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.DryIceWeightType" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAABAAAAAAAAACAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.EEIFilingOptionType" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAIAAAAgAIBIAAAAAAAFAAACAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.EEIInformationType" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAEAACAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.EEILicenseType" Collapsed="true">
+    <Position X="20.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAIEAgAAgAAAAAAAAEgAAABAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.EmailDetailsType" Collapsed="true">
+    <Position X="22.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgBAAAAgBAAAABAIAAAICQAgAAAAADAAAAAgAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.FormImageType" Collapsed="true">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.FormType" Collapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAEAgABAAAAAgQAAAAAAAgBAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ForwardAgentType" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQEAAAAAAAAAAAAAAAAAAEAAAAAADAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.FRSPaymentInfoType" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAACAAAAAAAAAAAAAAgAAAACAQAAAAAABAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.FRSShipmentDataType" Collapsed="true">
+    <Position X="10.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.HighValueReportType" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.IFChargesType" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ImageFormatType" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ImageType" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.IndicationType" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.InstructionCodeDescriptionType" Collapsed="true">
+    <Position X="19" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.IntermediateConsigneeType" Collapsed="true">
+    <Position X="20.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQEAAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.InternationalFormType" Collapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>TVAOAGoQJUAQgnACAwYRSEwAAAkw7FCoUgNQoICSeoQ=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LabelDeliveryType" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAEAAAAAAAACAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LabelImageFormatType" Collapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LabelMethodType" Collapsed="true">
+    <Position X="27.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LabelSpecificationType" Collapsed="true">
+    <Position X="8.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAJAAAAAAAAAAAAIBiAAAAEAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LabelStockSizeType" Collapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAACAAABAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LabelType" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAYAAAAAAAAAgAQAAAAAAAAEAAgAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LicenseType" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAIEAAAgAAAAAAAAABAAAAAAAAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.LocaleType" Collapsed="true">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACACAAAAEAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.NegotiatedRateChargesType" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEAAAACAAEIAQACAACAAAAAAAAAIABAgAAAAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.NetCostDateType" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAEAAgAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.NMFCType" Collapsed="true">
+    <Position X="19" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAQBAAACAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.NotificationType" Collapsed="true">
+    <Position X="20.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABAAAAAAAAEAAAgCAACBAAAAAAAAAAQAQAAg=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.OtherChargesType" Collapsed="true">
+    <Position X="22.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAgAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageAssociatedType" Collapsed="true">
+    <Position X="24.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAACAAAAAAAAAAACAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageDeclaredValueType" Collapsed="true">
+    <Position X="26" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAgAQAAAAAAAAAAAAAAAQAAAABAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageResultsType" Collapsed="true">
+    <Position X="27.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAZAAAAgBAAAAAAAAgBAEABCAAAAAAAAAAAAEBAgA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageServiceOptionsAccessPointCODType" Collapsed="true">
+    <Position X="8.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAABAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageServiceOptionsType" Collapsed="true">
+    <Position X="10.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAKAIEEKAACBAEAAAYAIAAACQAAAAAAAACAACAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageType" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEIgCAAggABAAAAAAAAIAAAAEAAZAAAAAAAQAYQA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackageWeightType" Collapsed="true">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAABAAAAAAAAACAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PackagingType" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PaymentInfoType" Collapsed="true">
+    <Position X="17.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAACAAAAAAAAAAIIAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PaymentType" Collapsed="true">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PhoneType" Collapsed="true">
+    <Position X="20.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIIEAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.POAType" Collapsed="true">
+    <Position X="22.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PreAlertEMailMessageType" Collapsed="true">
+    <Position X="24.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAIAAAAAAAAABAAAAAgAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PreAlertNotificationType" Collapsed="true">
+    <Position X="26" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAgAAAABAAAAAAAAAAQgQAAg=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PreAlertTextMessageType" Collapsed="true">
+    <Position X="27.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PreAlertVoiceMessageType" Collapsed="true">
+    <Position X="8.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ProcessShipAcceptCompletedEventArgs" Collapsed="true">
+    <Position X="10.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ProcessShipConfirmCompletedEventArgs" Collapsed="true">
+    <Position X="12" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ProcessShipmentCompletedEventArgs" Collapsed="true">
+    <Position X="13.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ProducerType" Collapsed="true">
+    <Position X="15.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAQEAAAAAAAAAAAAAACIAAEAAAAAATAAMIIAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ProductType" Collapsed="true">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBACAiAAJghgEYQE+AQAAEAIAFAAgBAAAAMQICBACBQ=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ProductWeightType" Collapsed="true">
+    <Position X="19" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAABAAAAAAAAACAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PSOCODType" Collapsed="true">
+    <Position X="20.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAIAAAAAAAgAAAAQAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.PSONotificationType" Collapsed="true">
+    <Position X="22.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABAAAAAAAAAAAAACAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.RateInfoType" Collapsed="true">
+    <Position X="24.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAABCgAAAAAAAAAAAAAAgAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ReceiptImageFormatType" Collapsed="true">
+    <Position X="26" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ReceiptSpecificationType" Collapsed="true">
+    <Position X="27.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ReceiptType" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ReferenceNumberType" Collapsed="true">
+    <Position X="8.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAgAACAAAACAAAEAAAgAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.RequestType" Collapsed="true">
+    <Position X="10.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAQAAAAACAAAAACAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ResponseType" Collapsed="true">
+    <Position X="12" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAAAAAAAAgAAAAAAAAAAAAAAACAAAAIAAAAAAI=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ReturnServiceType" Collapsed="true">
+    <Position X="13.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ScheduleBType" Collapsed="true">
+    <Position X="15.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAABAAAAAAAIEAAAAAAAAAAAAAAEAAAgAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.SCReportType" Collapsed="true">
+    <Position X="17.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ServiceType" Collapsed="true">
+    <Position X="19" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipAcceptRequest" Collapsed="true">
+    <Position X="20.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAIAAAAAAAAAgAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipAcceptResponse" Collapsed="true">
+    <Position X="22.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipAddressType" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAIIAAAAAAAgAAAQgAhAAAAAAAQAAE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipChargeType" Collapsed="true">
+    <Position X="24.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAAAAAgAAIgAQAgAAAAAAAAAAAEAAAAAABAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipConfirmRequest" Collapsed="true">
+    <Position X="26" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAABAACAAAAAABAAAAgAAACAAABAAAAgA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipConfirmResponse" Collapsed="true">
+    <Position X="27.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipFromType" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAIAACAAAAQAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentChargesType" Collapsed="true">
+    <Position X="8.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEAAAACAAEIQQACAACAAACAAAAAIARAAAAABIgA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentChargeType" Collapsed="true">
+    <Position X="10.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQgAECAAAAASAAAAAAAAAAAABQAQAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentRequest" Collapsed="true">
+    <Position X="12" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAABAACAAAAAABAAAAgAAACAAABAAAAgA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentResponse" Collapsed="true">
+    <Position X="13.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentResultsType" Collapsed="true">
+    <Position X="15.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFBCAQAAAABAAIAAAoYhpCQCAgABAAAUAEAAIIMJYBI=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentServiceOptionsAccessPointCODType" Collapsed="true">
+    <Position X="17.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAABAIAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentServiceOptionsNotificationTextMessageType" Collapsed="true">
+    <Position X="19" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentServiceOptionsNotificationVoiceMessageType" Collapsed="true">
+    <Position X="20.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentServiceOptionsType" Collapsed="true">
+    <Position X="1.25" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>oCAAkALYAFGAAAPBAREAAIAADARFQOgEggAMACAAiBA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentType" Collapsed="true">
+    <Position X="22.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCEgGsAQMtAAFCMCAQBMiCGhBAwAAxAQiACQEIYYI=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipmentTypeShipmentServiceOptions" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipperFiledType" Collapsed="true">
+    <Position X="24.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAAAgAAQAAAAgCAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipperType" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAQAAAIAAAAAAIAADAAAAQAAIAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipPhoneType" Collapsed="true">
+    <Position X="26" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIIEAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipService" Collapsed="true">
+    <Position X="27.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAIgQAACAAgBBAAAAggBgAABAAQCAACIAAAAAIQQE=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipToAddressType" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipToType" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAUAACAAAAAAAAAAAAIAAAAAAIAADAAAAQAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.ShipUnitOfMeasurementType" Collapsed="true">
+    <Position X="8.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.SoldToType" Collapsed="true">
+    <Position X="10.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAAAAAAAAAIAACIQAEAAAAAATAAMIIAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.TaxChargeType" Collapsed="true">
+    <Position X="12" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAgAAAAAAAAAAAAAAAAAQAAAABAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.TaxIDCodeDescType" Collapsed="true">
+    <Position X="13.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.TransactionReferenceType" Collapsed="true">
+    <Position X="15.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAACAAAAAUAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.TransportationChargeType" Collapsed="true">
+    <Position X="17.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAACAAAAAAgAAAAAAAAAQAEAAACAAAAAAAAEACAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UltimateConsigneeType" Collapsed="true">
+    <Position X="19" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAQEAAAAAAAAAAAAAAAAAAAAAAAEADAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UltimateConsigneeTypeType" Collapsed="true">
+    <Position X="20.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UnitOfMeasurementType" Collapsed="true">
+    <Position X="22.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UnitType" Collapsed="true">
+    <Position X="24.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAIEAAAAAAAAACAAAAEAAgAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UPSFiledType" Collapsed="true">
+    <Position X="26" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UPSPremiumCareFormType" Collapsed="true">
+    <Position X="27.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAgAAAEAAAAAgAAAIAAEAAAEAAAAAAAAAAEAAAgIA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UPSSecurity" Collapsed="true">
+    <Position X="8.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAABAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UPSSecurityServiceAccessToken" Collapsed="true">
+    <Position X="10.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.UPSSecurityUsernameToken" Collapsed="true">
+    <Position X="12" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAQAAAAAAAAAAAAACAAAIAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShipWSSample.ShipWebReference.VerbalConfirmationType" Collapsed="true">
+    <Position X="13.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="ShipWSSample.ShipWebReference.ProcessShipAcceptCompletedEventHandler" Collapsed="true">
+    <Position X="8.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="ShipWSSample.ShipWebReference.ProcessShipConfirmCompletedEventHandler" Collapsed="true">
+    <Position X="10.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="ShipWSSample.ShipWebReference.ProcessShipmentCompletedEventHandler" Collapsed="true">
+    <Position X="12" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Web References\ShipWebReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

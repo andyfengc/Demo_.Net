@@ -1,0 +1,10 @@
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\AspWebsite.dll.config
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\AspWebsite.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\AspWebsite.pdb
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\EntityFramework.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\MyBinaryDemo.Data.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\MyBinaryDemo.Data.pdb
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\bin\EntityFramework.xml
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\obj\Debug\AspWebsite.csprojResolveAssemblyReference.cache
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\obj\Debug\AspWebsite.dll
+C:\afeng\Workspace\.Net_Demo\StoreImage\AspWebsite\obj\Debug\AspWebsite.pdb

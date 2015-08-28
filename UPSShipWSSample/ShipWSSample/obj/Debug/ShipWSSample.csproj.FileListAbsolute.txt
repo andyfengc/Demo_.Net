@@ -1,0 +1,12 @@
+c:\afeng\Workspace\.Net_Demo\ShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe.config
+c:\afeng\Workspace\.Net_Demo\ShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe
+c:\afeng\Workspace\.Net_Demo\ShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.pdb
+c:\afeng\Workspace\.Net_Demo\ShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.csprojResolveAssemblyReference.cache
+c:\afeng\Workspace\.Net_Demo\ShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.exe
+c:\afeng\Workspace\.Net_Demo\ShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.pdb
+C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe.config
+C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.exe
+C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.pdb
+C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe
+C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.pdb
+C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.csprojResolveAssemblyReference.cache

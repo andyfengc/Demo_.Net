@@ -1,0 +1,12 @@
+EntityFramework.5.0.0
+Microsoft.AspNet.Mvc.4.0.20710.0
+Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0
+Microsoft.AspNet.Razor.2.0.20715.0
+Microsoft.AspNet.WebApi.4.0.20710.0
+Microsoft.AspNet.WebApi.Client.4.0.20710.0
+Microsoft.AspNet.WebApi.Core.4.0.20710.0
+Microsoft.AspNet.WebApi.WebHost.4.0.20710.0
+Microsoft.AspNet.WebPages.2.0.20710.0
+Microsoft.Net.Http.2.0.20710.0
+Microsoft.Web.Infrastructure.1.0.0.0
+Newtonsoft.Json.4.5.11

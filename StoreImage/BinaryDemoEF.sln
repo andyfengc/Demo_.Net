@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBinaryDemo.Data", "MyBinaryDemo.Data\MyBinaryDemo.Data.csproj", "{7BFD8B8C-4A76-4A22-8539-5FB9732D9102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspWebsite", "AspWebsite\AspWebsite.csproj", "{11B26A8D-3F5B-43A8-AD1B-78F0EE0255D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspMvcWebsite", "AspMvcWebsite\AspMvcWebsite.csproj", "{3DF15CE8-11B1-4780-859C-3D05A0FFF324}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BFD8B8C-4A76-4A22-8539-5FB9732D9102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BFD8B8C-4A76-4A22-8539-5FB9732D9102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BFD8B8C-4A76-4A22-8539-5FB9732D9102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BFD8B8C-4A76-4A22-8539-5FB9732D9102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B26A8D-3F5B-43A8-AD1B-78F0EE0255D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B26A8D-3F5B-43A8-AD1B-78F0EE0255D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B26A8D-3F5B-43A8-AD1B-78F0EE0255D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B26A8D-3F5B-43A8-AD1B-78F0EE0255D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DF15CE8-11B1-4780-859C-3D05A0FFF324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF15CE8-11B1-4780-859C-3D05A0FFF324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF15CE8-11B1-4780-859C-3D05A0FFF324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF15CE8-11B1-4780-859C-3D05A0FFF324}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

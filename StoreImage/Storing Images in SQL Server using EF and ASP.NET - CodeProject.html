@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET -->
+<html style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Storing Images in SQL Server using EF and ASP.NET - CodeProject</title> 
+	<link type="text/css" rel="stylesheet" href="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Main.min.css">
+
+	
+
+<meta name="Description" content="A quick help for storing images in SQL Server and displaying them on a ASP.NET Website; Author: Eduard Keilholz; Updated: 24 Oct 2013; Section: ASP.NET; Chapter: Web Development; Updated: 24 Oct 2013">
+<meta name="Keywords" content="SQL-server-2005, C#, ASP.NET, SQL, Windows, .NET, SQL-Server, Beginner, Intermediate, SQL-Server-2008, C#4.0, Cloud,ASP.NET,Web Development,Free source code, tutorials">
+<meta name="Author" content="Eduard Keilholz">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+<link rel="canonical" href="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Storing Images in SQL Server using EF and ASP.NET - CodeProject.html">
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Android" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=22">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - iOS" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=25">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Web" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=23">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<meta name="robots" content="index, follow">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<base target="_top">--><base href="." target="_top">
+	<link rel="icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function defrm () { /* thanks twitter */ document.write = ''; window.top.location = window.self.location;  setTimeout(function() { document.body.innerHTML = ''; }, 0);  window.self.onload = function(evt) { document.body.innerHTML = ''; }; }if (window.top !== window.self) {  try {  if (window.top.location.host) { /* will throw */ } else { defrm(); /* chrome */ }  } catch (ex) { defrm(); /* everyone else */ } }if (typeof(DemoUrl)!='undefined')   document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh"                  con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+(function() { 
+	var _dma = document.createElement('script');
+        _dma.type = 'text/javascript';
+        _dma.async = true;
+        _dma.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn2.developermedia.com/a.min.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(_dma);
+})();
+
+//]]>
+</script><script type="text/javascript" async="" src="http://cdn2.developermedia.com/a.min.js"></script>
+
+	
+
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script><script type="text/javascript" async="" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/ga.js"></script>
+
+
+<style type="text/css"></style><link type="text/css" rel="stylesheet" charset="UTF-8" href="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/main.js"></script><script type="text/javascript" charset="UTF-8" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/element_main.js"></script></head>	
+
+<body class="chrome chrome44" style="position: relative; min-height: 100%; top: 0px;">
+
+<a class="access-link" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#Main"><img alt="Click here to Skip to main content" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t.gif"></a>
+
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+<div class="alert-bar  overlay ">
+	<a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" class="close-notify">×</a>
+	<div>Sign up for our free weekly <a href="http://www.codeproject.com/feature/web-newsletter">Web Developer Newsletter</a>.</div>
+</div>
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix">
+
+	<div id="ctl00_MemberMenu_GenInfo" class="float-left">11,698,335 members (80,068 online)</div>
+
+	<div class="float-left">
+		
+	</div>
+
+	<div class="float-right">
+
+		
+
+		<span id="ctl00_MemberMenu_Messages_NotificationDiv" class="tooltip member-message">
+	<a id="ctl00_MemberMenu_Messages_NotificationCount" class="notification-count" href="http://www.codeproject.com/script/Membership/MyNotifications.aspx">1</a>
+
+	<div class="tooltip-flyout notification-dropdown">
+		
+		<div id="ctl00_MemberMenu_Messages_Confirm" class="bold spaced"><a id="ctl00_MemberMenu_Messages_EmailConfirm" href="http://www.codeproject.com/script/Membership/SendConfirmRequest.aspx?rp=%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET">Your email address needs to be confirmed.</a></div>
+		
+		<div id="Notifications" class="notification-list">
+			<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/animated_loading.gif" alt="loading" style="margin:auto;">
+		</div>
+		<div class="spaced">
+			
+		</div>
+	</div>
+</span><span id="ctl00_MemberMenu_CurRat" class="tooltip">
+				<a id="ctl00_MemberMenu_MyProfile" dir="ltr" href="http://www.codeproject.com/script/Membership/View.aspx?mid=11937569">Member 11937569</a><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-down-16.png" style="width:16px;height:16px;vertical-align:middle">
+				<div class="tooltip-flyout" style="width:12em !important;">
+					
+					<div class="list-item"><a id="ctl00_MemberMenu_MySettingsDefault" href="https://www.codeproject.com/script/Membership/Modify.aspx">My Settings</a></div>
+					
+					<div class="list-item"><a id="ctl00_MemberMenu_MyBookmarks" href="http://www.codeproject.com/script/Bookmarks/List.aspx?obtid=2">My Bookmarks</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyArticles" href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=11937569">My Articles</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyMessages" href="http://www.codeproject.com/script/Forums/Messages.aspx?fmid=11937569">My Messages</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyQuestions" href="http://www.codeproject.com/script/Answers/MemberPosts.aspx?tab=questions&mid=11937569&showall=True">My Questions</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyAnswers" href="http://www.codeproject.com/script/Answers/MemberPosts.aspx?tab=answers&mid=11937569&showall=True">My Answers</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyComments" href="http://www.codeproject.com/script/comments/MemberComments.aspx?mid=11937569">My Comments</a></div>
+					<div class="list-item"><a id="ctl00_MemberMenu_MyContacts" href="http://www.codeproject.com/script/Membership/ListContacts.aspx">My Contact info</a></div>
+					
+					
+					
+					
+				</div>
+			</span><span id="ctl00_MemberMenu_TotalPoints" title="Total reputation points"><a class="bold member-rep-box bronze" title="351" href="http://www.codeproject.com/script/Reputation/List.aspx?mid=11937569">351</a></span>
+			&nbsp;
+			<a id="ctl00_MemberMenu_Signout" href="http://www.codeproject.com/script/Membership/LogOff.aspx?rp=%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET">Sign out</a>
+			<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/circle-cross.gif" width="16px" height="16px" style="vertical-align:middle;margin-top:-3px;">
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed">
+        <div class="main-content">
+            <div class="logo"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/ASP-NET/Samples" data-tags="SQL-server-2005, C#, ASP.NET, SQL, Windows, .NET, SQL-Server, Beginner, Intermediate, SQL-Server-2008, C#4.0, Cloud,rating4.5"><noscript>&lt;a href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=728x90;ord=635761803458992285?"&gt;&lt;img src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=728x90;ord=635761803458992285?"  width="728px" height="90px" /&gt;&lt;/a&gt;</noscript></div></div>
+        </div>
+    </div>
+
+	<a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#Main"><img alt="Click here to Skip to main content" class="access-link" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t.gif"></a>
+
+	
+	<div id="ctl00_TPR" class="sub-headerbar clearfix fixed">
+    <div class="float-right">
+		
+
+<div class="searchbar">
+
+<form method="get" action="http://www.codeproject.com/search.aspx?sbo=kw" name="Search" class="tight">
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="search"><tbody><tr><td><input tabindex="2" class="search  subdue" id="sb_tb" value="" name="q"></td><td><input type="image" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/search.gif"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div id="SearchFilter" class="search-advanced small-text align-left" style="display: none;">
+	<b>Search within:<br></b>
+		
+		<input type="radio" id="sb_kw" name="sbo" value="kw" checked="true"><label for="sb_kw">Articles</label><br>
+<input type="radio" id="sb_qa" name="sbo" value="qa"><label for="sb_qa">Quick Answers</label><br>
+<input type="radio" id="sb_fm" name="sbo" value="fm"><label for="sb_fm">Messages</label><br>
+
+
+		
+		
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+    </div>
+    <div class="float-left">
+		
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Home" href="http://www.codeproject.com/">home</a>
+
+
+</li><li class=""><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class=""><a id="ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, &#39;ctl00_TopNavBar_MapFlyout&#39;);" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="has-submenu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout">
+			<li>
+				<div id="siteMap">
+					<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/animated.gif" alt="loading" style="margin:150px;width:100px;height:100px;">
+				</div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx?sbo=kw">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?sbo=kw?aidlst=152&sa_us=True">Beginner Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly break" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="http://www.codeproject.com/script/Articles/Submit.aspx">
+			<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/write13.png" width="13px" height="13px"> Submit an article or tip
+			</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">
+			<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/write13.png" width="13px" height="13px"> Post your Blog
+			</a></li>		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="">
+<a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">
+    <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span>
+</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight1" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#_comments">
+			<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/write13.png" width="13px" height="13px"> Ask a Question about this 
+			article</a>
+		</li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly highlight2" href="http://www.codeproject.com/Questions/ask.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/write13.png" width="13px" height="13px"> Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=120" style="padding-left:30px">Linux questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=81" style="padding-left:30px">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=85" style="padding-left:30px">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=1223" style="padding-left:30px">C#5 questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&alltags=true&tags=93" style="padding-left:30px">SQL questions</a></li>
+			
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">
+        <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Issues.aspx">Work  Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1827460/Objective-C-and-Swift.aspx">Objective-C and Swift</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class=""><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1848626/Android.aspx">Android</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1876716/iOS.aspx">iOS</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="http://www.codeproject.com/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_TopNavBar_DailyBuild" class="fly" href="http://www.codeproject.com/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Showcase" class="fly" href="http://www.codeproject.com/KB/showcase/">Product Showcase</a></li>
+		<li><a id="ctl00_TopNavBar_Research" class="fly" href="http://www.codeproject.com/script/ResearchLibrary/Index.aspx">Research Library</a></li>
+
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class=""><a id="ctl00_TopNavBar_Lounge" href="http://www.codeproject.com/Lounge.aspx">
+            <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly break" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		
+
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="http://www.codeproject.com/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="http://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird &amp; The Wonderful</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_TopNavBar_PRLnk" class="fly break" href="http://www.codeproject.com/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+
+		
+		<li class=""><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="has-submenu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li><li class="last"></li>
+		
+	</ul>
+
+</li>
+
+
+<li class="desktop-only tablet-only" style="margin-left:20px"><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">help</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpArticles" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://developermedia.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpJobs" class="fly" href="http://www.codeproject.com/info/Jobs/">Employment Opportunities</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+    </div>
+	<div class="sub-headerbar-divider"></div>
+	</div>		
+	
+
+	<div id="A" class="container-content-wrap fixed"> 
+
+	<div itemscope="" itemtype="http://schema.org/Article" class="container-content"> 
+
+
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a href="http://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> » <a href="http://www.codeproject.com/Chapters/2/Web-Development.aspx">Web Development</a> » <a href="http://www.codeproject.com/KB/aspnet/"><span itemprop="articleSection">ASP.NET</span></a> » <a href="http://www.codeproject.com/KB/aspnet/#Samples">Samples</a></div>
+			</div>
+
+			<div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+					
+		        
+		        
+					
+
+                
+				
+
+<a id="ctl00_ActionLinks_BookmarkMd_ImgBt" title="Bookmark" alternatetext="Bookmark" name="bm_658522_2" onclick="return bookmarkMe(658522,2,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=658522&amp;obtid=2&amp;action=AddBookmark&amp;bio=true&amp;bis=medium&#39;,&#39;medium&#39;);" href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=658522&obtid=2&action=AddBookmark&bio=true&bis=medium" style="display:inline-block;height:24px;width:24px;"><img title="Bookmark" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/bookmark24.png" alt="" style="border-width:0px;"></a>
+
+
+<span id="ctl00_ActionLinks_BookmarkMd_StatusMsg" class="tiny-text" style="display:none" name="bm_658522_2"></span>
+<a id="ctl00_ActionLinks_PrintMd" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?display=Print">
+	<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/print24.png" title="Print" width="24px" height="24px" style="border:0">
+</a>
+			</div>
+		</div>
+
+		<table class="extended container-article-parts" cellpadding="0" cellspacing="0">
+        <tbody><tr valign="top">
+		<td width="117px" class="article-wing-left">
+
+			<div id="ctl00_Nav" class="container-article-tabs stuck" style="position: fixed; top: 10px; left: 312.5px;">
+				<div class="tabs">
+					
+
+<div class="">
+	<div class="selected">Article</div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=658522">Browse Code</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=658522">Stats</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=658522">Revisions (19)</a></div><div class="unselected"><a href="http://www.codeproject.com/script/Articles/ListAlternatives.aspx?aid=658522">Alternatives</a></div>
+
+	<div class="unselected"><a href="http://www.codeproject.com/Articles/658522/WebControls/#_comments" id="ctl00_ArticleTabs_CommentLink" class="anchorLink">Comments 
+        <span id="ctl00_ArticleTabs_CmtCnt">(16)</span></a>
+	</div>
+</div>	
+
+				</div>
+
+				<a id="ctl00_AddAlternative" title="Write a related article about upgrades or translate this into a different language." class="add-item" href="http://www.codeproject.com/script/Articles/SubmissionWizard.aspx?at=1&apid=658522">Add your own<br>alternative version</a>
+
+			    <div class="tags"> 
+                    <h4>Tagged as</h4>
+			        <span id="ctl00_TagsList_TagWrp" class="tags">
+	
+	
+	
+	<span id="ctl00_TagsList_VisibleTags"><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/SQL-server-2005">SQL-server-2005</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/C--hash--">C#</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/ASP.NET">ASP.NET</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/SQL">SQL</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Windows">Windows</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/.NET">.NET</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/SQL-Server">SQL-Server</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Beginner">Beginner</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Intermediate">Intermediate</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/SQL-Server-2008">SQL-Server-2008</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/C--hash--4.0">C#4.0</a></div><div class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Cloud">Cloud</a></div></span> 
+
+	
+	
+</span>
+
+			    </div>
+                
+			</div>
+
+		</td>
+		<td>
+			
+			<div id="AT" class="container-article  fixed"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Storing Images in SQL Server using EF and ASP.NET - CodeProject.html" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="l85w9reoytz+TSYbCtvVKHdP32Aq21BsuNfqH5Lk4e5paDxDDhXpapjclpEfyzH2N3OM0e5O1GeMHM/r9VSBTylbgr+xz6UF2Sko4TcLfGOj0nUvF2us+TS676X+tOVAuF17mzJy5meCv9u0Sab92gujYksU4KAcq0THVAQx6+9E1P584CcAxAhJWI3D93D37l+9YlmrSyUHyJ+bePDtjYTLBMMTRhPG7yHDfqZMwQr2fUQO4g72B/ty79ib21qi0KAn9AGAg+8dMFEyYYwPGDL0In3ftNpUmFmGpAYSMCgr9t6ixo4j+SquHIR8bo5Ug1FbR55Pbu2l6Bpy7xbA+IqENPOKSLAEK81BIcUG1ivSYIEC9KKiMwwDmWCyXoT3cq3PBUUzHvYv03Sf8OZ4nCAbzTeTtOgrYnDlZ5CSlFRYNP++5eh1kgGoiUEacs3++WmzADlRdyHfyY5oJb5qkOr/LQsihVwsk7F1WzHjjtUG/vgoh7Yak/68nvzPNSQ1yVVFpLTRJwfsk6GWR1LYX16T+daLXMscBqfqsKz83oKDFbmJbdSxVAVjdUHAzdlzfhy6na8BrT0ZI2GljtdimlqRDzX7vWPcw7TO+YKFIhO6aCkot8JfZJah4QUzsClTpAoA6pKAQ/uAl8PjnYILJusQmIfadPVeecE8CsbnaXDU8r15mm6j1qkb/EMns0WAjDX7FiXfeCTzWvOYJF0PeeJjg9nxzi6CsVsD13ZhhqjhN9RJZ/qSS2fKXgkYFxl1s9krSyypik0KyQZh2Okhk7dGe+moEU9Tyhg+eSUFbVvkJ/Z6MTzAHyNnZ+gXYwXlsTyceTWd8n3WCBCLTtgv9VDmt3kaBHIHy+fMNIbcUTMKtQMHyAFz9/fGhAxZd1t0tCi4qoZKILQt/MMHh0tCGovVfJiLB/kYekzTx25L6fBOcUDj9HowC+RH68sKxole6NTMrONkXP9XGEl0zbSgmKcYjqGymVq57wwm63sp+L50/ahjLOzMIsPshLcIDgzNt+UVcbWB9WFKJVKjk8NrkVegd0zCPjdZNJTpHH+9zaqVFV4RnRxuCE+jn9yhWpcNfGKrXKYTvUefjirV5Gqo7CDSKiclNgwEefWaMkvdrY+TstHQ8MFg2eeZlMEWXGQIlrAIoo7fcOOk4qFGHdHIhVDOsZvFhHoN2yU0PKoRukaxSxDVW+1ov49hUnd/G0aKxzuaGI+YZCKcrxB7yahjGwA+NbOf65/GgdmOzytb2PmwCZTSbCFxE7vg53De1DkGNcqR8bv5GqKqUeLt4+bP7oUEq1qRxCDrnRCnWmKGB+t2YUei+KOLxkoac0/j7UW9cSNgZg0ky11R6ukqWuY+tzit9lme9OZO12H01xTZyDcYfkNSltVCrFbNM0i2DXTL9tvmLUvqoQR5I8ccfH7BVt7uNZme7pMwEKiXVCSQrUD9lqPtKBGvope4T8Jg/Y8u7RZeAjyTjYQotEX/9ma3NbhQYcDisUVTxcptemb0csMobRQHPE0yBYhkQ1hIOlsc5H12QykpBBy6lJDbb7/P22JD/Gu1ESZR3qSziQ0O2V5oNGq+dX7/4dEGW1p57EyzrV5a2kVgz0EEs/AWwhfOZcUb3KlUz8uAvrzxls17l5fOcpOmo2iToZGi628Z/BGWMxtnGJIQw+7hJBWuxOoLK8ykZUkPag6cm7qpTa1i/5q+fHBDfH3B58sY8q62xQ905+ZxTTeVl5vQcdwvxTcf6bj/xKNwhsKC4Grem/qkWf5xffy8Q0lPYOeQOx2nauHjGMnH8PTrtBiVBiLpxhy1ero6uhLbiGGYbSbmAKyd36XZTm/VcBWm2uy11/plsg1ebCt+gl/uY4RTyXhGystIFGwaY6xm02+nQa162q/t+Bk5Ab/gzC05NTLNHyB3jJi4VxDagvi9OAKd9iinJHFpveEXjaKUNfef2l/3XAgoeSdqQ8Drtwi0PeTM1QqsBtY2SGHMfUr8VyeGHnF4+UdFyc1Q31NmIY6yNfxLn/41/AfCO4ncH3gZdS/6XpaTgrJIJkK2NxSEHX/O5cGuV29QWC/h8hchQGbZAzeUu9cfgnAxQIzk2l3Hg1z8bFO5jdyFKN81jEw6B5bBgw9W0R6+0wGC3Jy8LrrkmW50xAom5K4ao5R7Hx3Hs+3C1NSmuAZQf8DAh0TdNDcNb45zoMbIOuwHsfJWO3630r67rxEarp8B+piNBYYTTNyJk1YVSKktPRoVn0tR9g5diBhawtWATliOrFwH/CJ/nZ38G+ErFkCFyIQFTvyI2ehBf+AKHgq+jRHXm9XpTQKlQIzDG6smmh29UNOqh/pUUYDGx9OxXYXVqDpIi8itkBWLnOaqVxXxZD9QkOqVYD0OfdJ0F89km+4WbLJfz/jpphemKzwgSKIxtNNPp+aSFoQkUYBf6SffaBLwCJsofV69eBvMhrULh7C3c7Gzz1xuCWbgjD10E9BN+Hvkbv0bNKbFWvZNCOkQA844KQF71FegkAB/OeIptGn1r4CfCB9VpBYd9CcrElAIa2b3DaUEQfoCFoC86Cdkjs50UE6dOKu6HxueMseokXFLRxTqzh0CCHDs2p3Ht/W1tS96us9xENaxndW7OMJCcOfi9xjO+KeUiWjqtmtNNjIYaXrOPwGutaf9C16slVsXFyZ2q57EzvNL6cxp79TYlVuvmrvKLX9n/TXB2V/vgu7VDpTxZn8B8yLl55zBAY7SQRTxGwa6d2hPw5fK45F9I04ZXJC8P2nzgCDS8hY8vag3wstQxqvI5YB+/FFG6wad7tlp">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+
+					    
+					    <a name="_articleTop" id="_articleTop"></a>
+					    <div class="title">
+					        
+					        <h1 id="ctl00_ArticleTitle" itemprop="name">Storing Images in SQL Server using EF and ASP.NET</h1> 
+					    </div>
+
+                        <div style="height:34px">
+					        
+					        <div class="entry float-left">
+                                <img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/{B35B5702-5093-4A49-B285-E5D97DC539FF}.gif" id="ctl00_avatar" class="float-left avatar">
+                                <div class="float-left">
+
+						            <span class="author"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618" rel="author"><span itemprop="author" itemscope="" itemtype="http://schema.org/Person"><span itemprop="name">Eduard Keilholz</span></span></a></span>, 
+						            <span class="date" itemprop="dateModified" content="2013-10-24 03:53:00">
+							            24 Oct 2013</span>
+			
+                                    <a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ArtStats" class="stats"><img title="views" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/read32.png" style="width:16px;height:16px;"> 59.8K<img title="downloads" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/download32.png" style="width:16px;height:16px;"> 3.1K<img title="bookmarks" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/bookmark32.png" style="width:16px;height:16px;"> 59</span><div id="ctl00_CurRat" class="tooltip anchorLink" style="cursor:pointer;margin-top: 5px" name="CurRat_658522">
+				
+							            
+
+<table cellpadding="0" cellspacing="0" class="small-text" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"> 
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		
+			<meta itemprop="bestRating" content="5"> 
+			<meta itemprop="worstRating" content="1">
+		
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars-large" style="height:21px;width:119px;position:relative;">
+	<div class="clipped align-left float-left" style="height:19px;width:110px;">
+		<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/stars-fill-lg.png" style="border-width:0px;">
+	</div><div class="clipped" style="height:19px;width:9px;position:relative;">
+		<img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/stars-empty-lg.png" style="border-width:0px;position:absolute;top:0;right:0;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ArticleRating_VotesR">&nbsp;<span itemprop="ratingValue" class="rating">4.55</span> (<span itemprop="ratingCount" class="count">31</span> votes)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+
+							            <div id="ctl00_RB" class="speech-bubble-container-up">
+								            <div class="speech-bubble-up" style="width:150px !important">
+									                        
+<div>
+<table class="feature" width="100%" height="50px" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0"><tbody><tr class="chart-row"><td class="chart-column"><span title="0 votes">1</span></td>
+<td class="chart-column"><span title="0 votes">2</span></td>
+<td class="chart-column"><span title="0 votes">3</span></td>
+<td class="chart-column"><div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pollcol.gif" width="20pxpx" height="31px" border="0px" alt="12 votes, 38.7%" title="12 votes, 38.7%"></div><span title="12 votes">4</span></td>
+<td class="chart-column"><div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pollcol.gif" width="20pxpx" height="50px" border="0px" alt="19 votes, 61.3%" title="19 votes, 61.3%"></div><span title="19 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">4.55/5 - 31 votes</div><div class="small-text align-center subdue">μ 4.55, σ<sub>a</sub> 0.87 [<a href="http://www.codeproject.com/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+								            </div>
+								            <div class="speech-bubble-pointer-up">
+									            <div class="speech-bubble-pointer-up-inner"></div>
+								            </div>
+							            </div>
+						            </div>
+                                </div>
+					        </div>
+
+                            
+						    <div id="ctl00_RateArticleRow" class="float-right align-right voting-bar">
+						        <div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_658522">
+
+	<table width="100%" cellpadding="0" cellspacing="0" class="small-text">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" class="rating-result align-right">
+			<span class="align-right"></span>
+			<img class="loaderImg" width="16px" alt="loading..." height="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/animated_loading_blue.gif" style="display:none;"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space:nowrap" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				
+				<td id="ctl00_RateArticle_StartForm" align="right" nowrap="nowrap">Rate: </td>
+
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap rating-stars-voter-large">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input id="ctl00_RateArticle_VoteRBL_0" type="radio" name="ctl00$RateArticle$VoteRBL" value="1" style="display: none;"><input id="ctl00_RateArticle_VoteRBL_1" type="radio" name="ctl00$RateArticle$VoteRBL" value="2" style="display: none;"><input id="ctl00_RateArticle_VoteRBL_2" type="radio" name="ctl00$RateArticle$VoteRBL" value="3" style="display: none;"><input id="ctl00_RateArticle_VoteRBL_3" type="radio" name="ctl00$RateArticle$VoteRBL" value="4" style="display: none;"><input id="ctl00_RateArticle_VoteRBL_4" type="radio" name="ctl00$RateArticle$VoteRBL" value="5" style="display: none;"></span> 
+
+						
+					<div class="rating-star-block"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" rating="1" class="star outline" title="vote 1">vote 1</a><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" rating="2" class="star outline" title="vote 2">vote 2</a><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" rating="3" class="star outline" title="vote 3">vote 3</a><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" rating="4" class="star outline" title="vote 4">vote 4</a><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" rating="5" class="star outline" title="vote 5">vote 5</a></div></span>
+
+				</td>
+
+				
+				<td style="padding-left:5px">	
+					<input type="submit" name="ctl00$RateArticle$SubmitRateBtn" value="Vote!" id="ctl00_RateArticle_SubmitRateBtn" class="button" style="display: none;">
+				</td>
+			</tr>
+			</tbody></table>
+			
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		<div id="ctl00_RateArticle_RCD" class="rating-comment align-left float-right">
+			Add a reason or comment to your vote:
+            <a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" id="clear-rate_ctl00_RateArticle_RCD" title="close" class="rating-close">x</a>
+            <br>
+			<textarea class="RateComment" rows="5" cols="60" style="width:98%;"></textarea>
+			<span id="ctl00_RateArticle_CommentReq" class="subdue">Adding a comment to your rating is optional</span>
+		</div>
+        
+	</div>
+</div>
+						    </div>
+						    	
+                        </div>
+
+   					    
+                        <div id="ctl00_description" class="summary" itemprop="headline">A quick help for storing images in SQL Server and displaying them on a ASP.NET Website</div><span id="ctl00_thumbnailUrl" class="date" itemprop="image" content="http://www.codeproject.com/KB/aspnet/658522/Thumb-658522.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					
+					
+
+						
+					
+
+					<div id="ctl00_confirmError" class="advise"><img style="float:left;margin-right:10px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/warning48.png" width="48px" height="48px"><b>Is your email address OK?</b> You are signed up for our 
+						newsletters but your email address is either unconfirmed, or has not been 
+						reconfirmed in a long time. Please click <a id="ctl00_RequestConfirmLink2" href="http://www.codeproject.com/script/Membership/SendConfirmRequest.aspx?rp=%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET">here</a> to have a confirmation email sent 
+						so we can confirm your email address and start sending you newsletters 
+						again. Alternatively, you can 
+						<a id="ctl00_SubscribeLink2" href="http://www.codeproject.com/script/Membership/Subscribe.aspx?rp=%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET">update your subscriptions</a>.</div>
+
+						
+						<div id="contentdiv" class="text" itemprop="articleBody">
+						
+
+
+
+<ul class="download">
+<li><a href="http://www.codeproject.com/KB/aspnet/658522/ASPMVCSource.zip">Download ASP.NET MVC4 and ASP.NET source code - 82.2 KB</a> </li>
+</ul>
+
+<h2>Introduction </h2>
+
+<p>This article was actually driven by the demand for knowledge about this subject in the forum. <a title="Questions on the forum" href="http://www.codeproject.com/search.aspx?q=images+sql&doctypeid=4">Questions </a>about how to store binary data (images) in a SQL Server database and how to retrieve them, and even return the image with ASP.NET (MVC) to display on a website. For the ASP.NET WebForms developers, I have also included an ASP.NET WebForms example project. </p>
+
+<h2>Background </h2>
+
+<p>The solution contains two demo projects. One ASP.NET WebForms project, and an ASP.NET MVC 4 project. The MVC demo project contains two controllers. One <code>HomeController </code>and one <code>DocumentController</code>. The <code>DocumentController </code>contains two action methods to upload and download images. The <code>HomeController </code>uses these methods to upload and display images from the database. To nicely present the upload functionality, I included <em>dropzone.js</em> (<a href="http://www.dropzonejs.com/">http://www.dropzonejs.com/</a>).</p>
+
+<p>The ASP.NET WebForms project contains a single web form and two Generic Handlers. One handler handles the upload, the other the download of images to and from the database. The web form then uses these handlers to post images to and to get images from. </p>
+
+<h2>Setting Up a Database</h2>
+
+<p>I assume you're familiar with SQL Server databases. I created a table called <code><strong>Document</strong> </code>which looks like this: <img border="0" hspace="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/table_documents.png" width="300" height="227"> </p>
+
+<p>[Please note that when downloading the demo project, a connection string with the name <code>DocumentEntities</code> needs to be changed in the <code>web.config</code> file of the ASP.NET project] </p>
+
+<p>If you open the Entity Framework data model (<em>DocumentEntities.edmx</em>) diagram, the table above will look like this:</p>
+
+<p><img border="0" hspace="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/efmodel.jpg" width="640" height="595"></p>
+
+<h2>Using the Code </h2>
+
+<p>To keep things simple, I added another project to the solution, a simple class library project that will contain the Entity Framework model I created from my database containing a <code>Document </code>table. </p>
+
+<h3>A Little Piece of MVC </h3>
+
+<p>I created a new controller, I called it <code>HomeController </code>and chose 'Empty MVC Controller' as a template. This controller is just fine by returning a view from the Index action method. </p>
+
+<p>The action methods look like this (yeah I know, the magic doesn't happen here, but for completeness I just wanted to add them). </p>
+
+<div class="pre-action-link" id="premain956916" style="width:100%;display:block;"><span id="prehide956916" onclick="processCodeBlocks.togglePre(956916);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(956916);">Copy Code</span></div><pre lang="cs" id="pre956916" style="margin-top: 0px;">[HttpGet]
+<span class="code-keyword">public</span> ActionResult Show(<span class="code-keyword">int</span>? id)
+{
+    <span class="code-keyword">string</span> mime;
+    <span class="code-keyword">byte</span>[] bytes = LoadImage(id.Value, <span class="code-keyword">out</span> mime);
+    <span class="code-keyword">return</span> File(bytes, mime);
+}</pre>
+
+<p>The above method calls a function that retrieves the file type and the file's <code>byte[] </code>and returns a <code>File </code>object. The <code>int? id</code> will be used to find the image by record ID in the database. </p>
+
+<div class="pre-action-link" id="premain145435" style="width:100%;display:block;"><span id="prehide145435" onclick="processCodeBlocks.togglePre(145435);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(145435);">Copy Code</span></div><pre lang="cs" id="pre145435" style="margin-top: 0px;">[HttpPost]
+<span class="code-keyword">public</span> ActionResult Upload()
+{
+    SuccessModel viewModel = <span class="code-keyword">new</span> SuccessModel();
+    <span class="code-keyword">if</span> (Request.Files.Count == <span class="code-digit">1</span>)
+    {
+        <span class="code-keyword">var</span> name = Request.Files[<span class="code-digit">0</span>].FileName;
+        <span class="code-keyword">var</span> size = Request.Files[<span class="code-digit">0</span>].ContentLength;
+        <span class="code-keyword">var</span> type = Request.Files[<span class="code-digit">0</span>].ContentType;
+        viewModel.Success = HandleUpload(Request.Files[<span class="code-digit">0</span>].InputStream, name, size, type);
+    }
+    <span class="code-keyword">return</span> Json(viewModel);
+}</pre>
+
+<p>This action method will be used by <em>dropzone.js</em>. Dropzone posts some information about the file being uploaded, and of course the file's binaries as well. All values are passed to a <code>HandleUpload </code>method that stores the file in the database.</p>
+
+<h3>A Little Piece of WebForms</h3>
+
+<p>For the ASP.NET WebForms project, I added a <code>WebForm </code>(and called it <em>Default.aspx</em>). There's no code-behind in this webform, just a bunch of HTML and JavaScript, which are by the way pretty similar to the HTML rendered by the MVC version. There's one slight difference, the post address of the upload form, and the JavaScript triggering an update of image uses a different address. </p>
+
+<h2>Show Me the Magic</h2>
+
+<p>OK, now this is what you want to see! The methods that actually put the files in the database and read the image from the database. Are you ready? Here we go: </p>
+
+<div class="pre-action-link" id="premain393555" style="width:100%;display:block;"><span id="prehide393555" onclick="processCodeBlocks.togglePre(393555);">Hide</span>  &nbsp; <span id="preShrink393555" onclick="processCodeBlocks.shrinkExpand(393555);">Shrink</span> <img id="preimg393555" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up-16.png" style="height:16px;width:16px" onclick="processCodeBlocks.shrinkExpand(393555);">  &nbsp; <span onclick="return processCodeBlocks.copyCode(393555);">Copy Code</span></div><pre lang="cs" id="pre393555" processed="true" style="margin-top: 0px;"><span class="code-keyword">private</span> <span class="code-keyword">bool</span> HandleUpload(Stream fileStream, <span class="code-keyword">string</span> name, <span class="code-keyword">int</span> size, <span class="code-keyword">string</span> type)
+{
+    <span class="code-keyword">bool</span> handled = <span class="code-keyword">false</span>;
+
+    <span class="code-keyword">try</span>
+    {
+        <span class="code-keyword">byte</span>[] documentBytes = <span class="code-keyword">new</span> <span class="code-keyword">byte</span>[fileStream.Length];
+        fileStream.Read(documentBytes, <span class="code-digit">0</span>, documentBytes.Length);
+
+        Document databaseDocument = <span class="code-keyword">new</span> Document
+        {
+            CreatedOn = DateTime.Now,
+            FileContent = documentBytes,
+            IsDeleted = <span class="code-keyword">false</span>,
+            Name = name,
+            Size = size,
+            Type = type
+        };
+
+        <span class="code-keyword">using</span> (DocumentEntities databaseContext = <span class="code-keyword">new</span> DocumentEntities())
+        {
+            databaseContext.Documents.Add(databaseDocument);
+            handled = (databaseContext.SaveChanges() &gt; <span class="code-digit">0</span>);
+        }
+    }
+    <span class="code-keyword">catch</span> (Exception ex)
+    {
+        <span class="code-comment">//</span><span class="code-comment"> Oops, something went wrong, handle the exception
+</span>    }
+
+    <span class="code-keyword">return</span> handled;
+}</pre>
+
+<p>First, we create a byte array since that's how <code>EntityFramework </code>maps the binary file type. Then we read the incoming stream (the file) into the byte array. Then we create a new <code>Document </code>object, which is a representation of our database table. Then we instantiate the database context and add the document to the <code>Document </code>table in the database, and then save it.</p>
+
+<p>The method for retrieving the file from the database is even easier:</p>
+
+<div class="pre-action-link" id="premain555917" style="width:100%;display:block;"><span id="prehide555917" onclick="processCodeBlocks.togglePre(555917);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(555917);">Copy Code</span></div><pre lang="cs" id="pre555917" style="margin-top: 0px;"><span class="code-keyword">private</span> <span class="code-keyword">byte</span>[] LoadImage(<span class="code-keyword">int</span> id, <span class="code-keyword">out</span> <span class="code-keyword">string</span> type)
+{
+    <span class="code-keyword">byte</span>[] fileBytes = <span class="code-keyword">null</span>;
+    <span class="code-keyword">string</span> fileType = <span class="code-keyword">null</span>;
+    <span class="code-keyword">using</span> (DocumentEntities databaseContext = <span class="code-keyword">new</span> DocumentEntities())
+    {
+        <span class="code-keyword">var</span> databaseDocument = databaseContext.Documents.FirstOrDefault(doc =&gt; doc.DocumentId == id);
+        <span class="code-keyword">if</span> (databaseDocument != <span class="code-keyword">null</span>)
+        {
+            fileBytes = databaseDocument.FileContent;
+            fileType = databaseDocument.Type;
+        }
+    }
+    type = fileType;
+    <span class="code-keyword">return</span> fileBytes;
+}</pre>
+
+<p>Create an instance of the database context and fetch the first document which <code>DocumentId </code>matches the document id requested. If a document is found, return the bytes of the document (its content) and the file type. </p>
+
+<h2>Points of Interest</h2>
+
+<p>Nothing really special here, but please note that I added a little JavaScript to the Index view of the home controller.</p>
+
+<div class="pre-action-link" id="premain133176" style="width:100%;display:block;"><span id="prehide133176" onclick="processCodeBlocks.togglePre(133176);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(133176);">Copy Code</span></div><pre lang="jscript" id="pre133176" style="margin-top: 0px;">$(document).ready(<span class="code-keyword">function</span> () {
+    $(<span class="code-string">"</span><span class="code-string">#preview"</span>).fadeOut(<span class="code-digit">15</span>);
+    $(<span class="code-string">"</span><span class="code-string">#refreshButton"</span>).click(<span class="code-keyword">function</span> () {
+        <span class="code-keyword">var</span> imageToLoad = $(<span class="code-string">"</span><span class="code-string">#imageId"</span>).val();
+        <span class="code-keyword">if</span> (imageToLoad.length &gt; <span class="code-digit">0</span>) {
+            $(<span class="code-string">"</span><span class="code-string">#preview"</span>).attr(<span class="code-string">"</span><span class="code-string">src"</span>, <span class="code-string">"</span><span class="code-string">/Document/Show/"</span> + imageToLoad);
+            $(<span class="code-string">"</span><span class="code-string">#preview"</span>).fadeIn();
+        }
+    });
+});</pre>
+
+<p>This little friend enables us to retrieve document from the database and display it as an image. The HTML shows a textbox and a button, enter the database ID of a document in the textbox, and hit the button to display the image.</p>
+
+<p>The ASP.NET WebForms project uses exactly the same JavaScript, but with a different address:</p>
+
+<div class="pre-action-link" id="premain89987" style="width:100%;display:block;"><span id="prehide89987" onclick="processCodeBlocks.togglePre(89987);">Hide</span>  &nbsp; <span onclick="return processCodeBlocks.copyCode(89987);">Copy Code</span></div><pre lang="jscript" id="pre89987" style="margin-top: 0px;">$(document).ready(<span class="code-keyword">function</span> () {
+    $(<span class="code-string">"</span><span class="code-string">#preview"</span>).fadeOut(<span class="code-digit">15</span>);
+    $(<span class="code-string">"</span><span class="code-string">#refreshButton"</span>).click(<span class="code-keyword">function</span> () {
+        <span class="code-keyword">var</span> imageToLoad = $(<span class="code-string">"</span><span class="code-string">#imageId"</span>).val();
+        <span class="code-keyword">if</span> (imageToLoad.length &gt; <span class="code-digit">0</span>) {
+            <strong><em>$(<span class="code-string">"</span><span class="code-string">#preview"</span>).attr(<span class="code-string">"</span><span class="code-string">src"</span>, <span class="code-string">"</span><span class="code-string">/Download.ashx?id="</span> + imageToLoad);</em></strong>
+            $(<span class="code-string">"</span><span class="code-string">#preview"</span>).fadeIn();
+        }
+    });
+}); </pre>
+
+<h2>Download Instructions </h2>
+
+<p>Please note that the project uses a couple of NuGet packages. The names (and versions) of the packages are stored in <em>[UsedPackages.txt]</em>. Also, please don't forget to change the <code>connectionstring </code>settings in the <em>web.config</em> of both web projects. </p>
+
+<p>The zip file also includes a file called <em>[CreateDocumentsTable.sql]</em> which is a SQL Script that you can run against a SQL Server database. It will create the <code>Documents </code>table in the database that I use in the article. </p>
+
+<h2>History</h2>
+
+<p>Keep a running update of any changes or improvements you've made here.</p>
+
+<ul>
+<li>2013/09/25 - First version - Wow! Exciting</li>
+
+<li>2013/09/30 - Added ASP.NET source code and download instructions</li>
+
+<li>2013/10/02 - Added SQL Script for creating DB table to source and article and changed title</li>
+
+<li>2013/10/07 - Added description of ASP.NET WebForms project </li>
+</ul>
+
+
+						</div>
+						
+
+						<div class="float-right" style="margin:20px 0 0 10px;border:1px solid #ccc">
+						<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/ASP-NET/Samples" data-loadonview="true" data-tags="SQL-server-2005, C#, ASP.NET, SQL, Windows, .NET, SQL-Server, Beginner, Intermediate, SQL-Server-2008, C#4.0, Cloud,rating4.5"><noscript>&lt;a href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=300x250;ord=635761803458992285?"&gt;&lt;img src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=300x250;ord=635761803458992285?"  width="300px" height="250px" /&gt;&lt;/a&gt;</noscript></div>
+						</div>
+                        
+                        
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+                        
+						<h2>Share</h2>
+				        <div class="share-list">
+					        
+
+
+
+<!-- Buttons start here. Copy this ul to your document. -->
+<ul class="rrssb-buttons clearfix rrssb-1">
+    <li class="email" data-initwidth="16.666666666666668" data-size="34" style="width: calc(50% - 84px);">
+
+        <a href="mailto:?subject=Storing%20Images%20in%20SQL%20Server%20using%20EF%20and%20ASP.NET%20-%20CodeProject&body=Here%27s%20an%20interesting%20article%20on%20for%20you%20on%20codeproject.com%0a%0ahttp%3a%2f%2fwww.codeproject.com%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET%0a">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                        <path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 
+                            c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 
+                            9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 
+                            0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 
+                            7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 
+                            0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 
+                            26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 
+                            1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"></path></g>
+                </svg>
+            </span>
+            <span class="text">email</span>
+        </a>
+    </li>
+    <li class="twitter" data-initwidth="16.666666666666668" data-size="47" style="width: calc(50% - 84px);">
+        <!-- Replace href with your Meta and URL information  -->
+        <a href="http://twitter.com/home?status=Storing+Images+in+SQL+Server+using+EF+and+ASP.NET+-+CodeProject+-+http%3a%2f%2fwww.codeproject.com%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32
+                    c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155
+                    C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965
+                    C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683
+                    c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851
+                    C26.275,7.229,25.39,8.196,24.253,8.756z"></path>
+                </svg>
+            </span>
+            <span class="text">twitter</span>
+        </a>
+    </li>
+
+    <li class="facebook small" data-initwidth="16.666666666666668" data-size="58" style="width: 42px;">
+        <!-- Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header: 
+        https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/ -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.codeproject.com%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path>
+                </svg>
+            </span>
+            <span class="text">facebook</span>
+        </a>
+    </li>
+    
+    <li class="linkedin small" data-initwidth="16.666666666666668" data-size="52" style="width: 42px;">
+        <!-- Replace href with your meta and URL information -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET&title=Storing+Images+in+SQL+Server+using+EF+and+ASP.NET+-+CodeProject&summary=&source=codeproject.com" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803
+                        c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048
+                        h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501
+                        c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546
+                        C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"></path>
+                </svg>
+            </span>
+            <span class="text">linkedin</span>
+        </a>
+    </li>
+    <li class="reddit small" data-initwidth="16.666666666666668" data-size="40" style="width: 42px;">
+        <a href="http://www.reddit.com/submit?url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET&title=Storing+Images+in+SQL+Server+using+EF+and+ASP.NET+-+CodeProject">
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                <path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"></path>
+                <path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"></path>
+                <path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 
+                c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 
+                4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 
+                19.5 17.8 19.5 17.5 19.791z"></path><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 
+                0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 
+                2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 
+                0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 
+                2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 
+                8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 
+                3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 
+                13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 
+                13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 
+                c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 
+                0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 
+                c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 
+                C26.354 13.8 26.1 14.3 25.8 14.605z"></path></g></svg>
+            </span>
+            <span class="text">reddit</span>
+        </a>
+    </li>
+    <li class="googleplus small" data-initwidth="16.666666666666668" data-size="52" style="width: 42px;">
+        <!-- Replace href with your meta and URL information.  -->
+        <a href="https://plus.google.com/share?url=http%3a%2f%2fwww.codeproject.com%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET" class="popup">
+            <span class="icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663
+                                c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027
+                                C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068
+                                c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562
+                                c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41
+                                c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511
+                                c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478
+                                c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492
+                                c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479
+                                c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"></path>
+                            <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004
+                                23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89      "></polygon>
+                        </g>
+                    </g>
+                </svg>
+            </span>
+            <span class="text">google+</span>
+        </a>
+    </li>
+    
+</ul>
+<!-- Buttons end here -->
+
+				        </div> 
+    			        
+
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+						    
+
+
+<div class="author-wrapper">
+
+    <div class="pic-wrapper"> 
+        <img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" class="profile-pic" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/{B35B5702-5093-4A49-B285-E5D97DC539FF}.gif" style="border-width:0px;transform:rotate(-4deg);">
+
+    </div>
+
+    <div class="container-member">  
+        <b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author" href="http://www.codeproject.com/Members/EduardKeilholz">Eduard Keilholz</a></b>
+
+        <table class="extended">
+        <tbody><tr>
+            <td rowspan="2" nowrap="" valign="middle">
+            <div id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_FollowOn" class="follow">
+	            <a href="http://www.twitter.com/ed_dotnet"><img style="vertical-align:middle;border:0;height:24px;width:24px" alt="Twitter" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/twitter32.png"></a> 
+	            
+	            
+            </div>
+            </td>
+            <td width="100%">
+                <div class="company">
+                    <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software Developer (Senior)</span>
+	                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany">http://www.today-it.nl</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation">Netherlands <img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/NL.gif" alt="Netherlands" width="16px" height="11px"></span>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+    <div class="description">
+        In 1998 I started as webdesigner programming websites in Perl and later PHP. After two years wrote most of the websites in ASP and from then on lost the feeling with a linux/unix platform.<br>
+<br>
+Since 2001 interested in Windows applications and now writing software using mostly C# for about 7 years now.
+
+        
+    </div>
+
+</div><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    <div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/ASP-NET/Samples" data-loadonview="true" data-tags="SQL-server-2005, C#, ASP.NET, SQL, Windows, .NET, SQL-Server, Beginner, Intermediate, SQL-Server-2008, C#4.0, Cloud,rating4.5,pos_bottom"><noscript>&lt;a href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=728x90;ord=635761803458992285?"&gt;&lt;img src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=728x90;ord=635761803458992285?"  width="728px" height="90px" /&gt;&lt;/a&gt;</noscript></div>
+				</div>
+				
+
+                
+        <h2 id="ctl00_AlsoRead_RelatedResults_ctl00_Header" class="also-read">You may also be interested in...</h2>
+        <table class="spaced content-list also-read">
+    
+	    <tbody><tr>
+        <td class="content-list-item" width="50%" valign="top">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl01_Thumbnail" href="http://www.codeproject.com/Articles/525532/Design-and-Develop-a-website-using-ASP-NET-MVC-E"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Thumb-525532.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl01_Link" href="http://www.codeproject.com/Articles/525532/Design-and-Develop-a-website-using-ASP-NET-MVC-E">Design and Develop a website using ASP.NET MVC 4, EF, Knockoutjs and Bootstrap : Part - 1</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" width="50%" valign="top">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl02_Thumbnail" href="http://www.codeproject.com/ResearchLibrary/129/Value-of-Database-Resilience-Comparing-Costs-of-Do"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/LibraryItemThumbnail_129_100x130.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl02_Link" href="http://www.codeproject.com/ResearchLibrary/129/Value-of-Database-Resilience-Comparing-Costs-of-Do">Value of Database Resilience: Comparing Costs of Downtime for IBM DB2 10.5 and Microsoft SQL Server 2014</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+	    <tr>
+        <td class="content-list-item" width="50%" valign="top">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl03_Thumbnail" href="http://www.codeproject.com/Articles/10861/Storing-and-Retrieving-Images-from-SQL-Server-usin"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/article100x80.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl03_Link" href="http://www.codeproject.com/Articles/10861/Storing-and-Retrieving-Images-from-SQL-Server-usin">Storing and Retrieving Images from SQL Server using Microsoft .NET</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" width="50%" valign="top">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl04_Thumbnail" href="http://www.codeproject.com/Articles/1016721/Getting-Started-with-the-Intel-Edison-Board-on-W"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Thumb-1016721.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl04_Link" href="http://www.codeproject.com/Articles/1016721/Getting-Started-with-the-Intel-Edison-Board-on-W">Getting Started with the Intel® Edison Board on Windows</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+	    <tr>
+        <td class="content-list-item" width="50%" valign="top">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl05_Thumbnail" href="http://www.codeproject.com/Articles/526970/Design-and-Develop-a-website-using-ASP-NET-MVC"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Thumb-526970.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl05_Link" href="http://www.codeproject.com/Articles/526970/Design-and-Develop-a-website-using-ASP-NET-MVC">Design and Develop a website using ASP.NET MVC 4, EF, Knockoutjs and Bootstrap : Part - 2</a></div>
+                
+            </div>
+        </td>
+	
+        <td class="content-list-item" width="50%" valign="top">
+            <div class="thumbnail"><a id="ctl00_AlsoRead_RelatedResults_ctl06_Thumbnail" href="http://www.codeproject.com/Articles/1016404/Putting-databases-under-version-control-with-Redga"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Thumb-1016404.png" alt="" style="border-width:0px;"></a></div>
+            <div class="text">
+                <div class="title"><a id="ctl00_AlsoRead_RelatedResults_ctl06_Link" href="http://www.codeproject.com/Articles/1016404/Putting-databases-under-version-control-with-Redga">Putting databases under version control with Redgate's SQL Source Control</a></div>
+                
+            </div>
+        </td>
+	    </tr>
+	
+		</tbody></table>
+	
+
+
+
+				
+				
+
+					<h2>Comments and Discussions</h2>
+					<a class="float-left" name="_comments" id="_comments">&nbsp;</a><div id="_MessageBoardctl00_MessageBoard" onclick="return SwitchMessage(event, null)">
+<table id="ForumTable" class="forum relaxed" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td><table width="100%" border="0" cellpadding="3px" cellspacing="0">
+<tbody><tr class="header1">
+<td colspan="2" style="white-space:nowrap;"><div class="container">
+<div class="button new-message compose float-left" onclick="FireNew(this)">
+<a rel="nofollow" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET" name="Frm_HoverNL" target="_top">Add a Comment or Question&nbsp;</a>
+</div><div class="admin-links float-left align-middle" style="width:60px;line-height:24px;margin-top:4px;">
+&nbsp;<a href="http://www.codeproject.com/KB/FAQs/MessageBoardsFAQ.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/help_sm.png" title="FAQ" alt="FAQ" style="border-width:0;width:16px;height:16px;vertical-align:middle;"></a>
+</div><div class="float-right">
+<form action="http://www.codeproject.com/Search.aspx?sbo=fm" method="get" class="searchbar">
+<input type="hidden" name="fid" value="1843214"><input type="hidden" name="sbo" value="fm"><b>Search Comments </b><input type="search" class="search" name="qf">&nbsp;<input type="submit" value="Go" class="button">
+</form>
+</div>
+</div></td>
+</tr><tr class="header2">
+<td></td><td style="width:100%;"><div style="text-align:right;">
+<form action="http://www.codeproject.com/script/Forums/SetOptions.aspx?floc=%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET&fid=1843214&df=90&mpp=25&prof=True&sort=Position&view=Normal&spc=Relaxed" method="get" style="margin:0;padding:0;">
+<input type="hidden" name="fid" value="1843214"><input type="hidden" name="currentQS" value="?floc=%2fArticles%2f658522%2fStoring-Images-in-SQL-Server-using-EF-and-ASP-NET&amp;fid=1843214&amp;df=90&amp;mpp=25&amp;prof=True&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed"><input type="hidden" name="floc" value="/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET"><input type="checkbox" checked="checked" name="prof" id="prof" style="vertical-align:middle;"><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Spacing<select size="1" class="dropdown" name="spc">
+<option selected="" value="Relaxed">Relaxed</option><option value="Compact">Compact</option><option value="Tight">Tight</option>
+</select>&nbsp;&nbsp;Layout<select size="1" class="dropdown" name="view">
+<option selected="" value="Normal">Normal</option><option value="Topic">Open Topics</option><option value="Expanded">Open All</option><option value="Thread">Thread View</option>
+</select>&nbsp;&nbsp;Per page<select size="1" class="dropdown" name="mpp">
+<option value="10">10</option><option selected="" value="25">25</option><option value="50">50</option>
+</select>&nbsp;&nbsp;&nbsp;<input type="submit" value="Update" name="SetOpt" class="button">
+</form>
+</div></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+<tbody><tr class="navbar">
+<td></td><td style="text-align:right;width:50%;"></td><td style="text-align:right;white-space:nowrap;"><span class="nav-link disabled">First</span> <span class="nav-link disabled">Prev</span> <span class="nav-link disabled">Next</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="fixed-layout blank-background">
+<tbody><tr>
+<td><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" border="0" width="1px" height="5px" alt=""></td>
+</tr><tr id="F4729576_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4729576xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_question.gif" alt="Question"></td><td class="subject hover-container"><a class="message-link" name="4729576" parent="0" thread="4729576" href="http://www.codeproject.com/Messages/4729576/When-I-run-the-Upload-button-didnt-work-doh.aspx">When I run the Upload button didn't work  :doh:</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">praveendubey</span><span class="date">30-Dec-13  22:06</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=6689526">praveendubey</a></span></td><td class="date"><span>30-Dec-13  22:06&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4729576_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="6689526" msgid="4729576" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4729576xx" onclick="RateMsg(6689526,4729576,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4729576xx" onclick="RateMsg(6689526,4729576,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">When I run the project, when clicked on dropzone, it gives image picker dialog.<br>
+and worked well..<br>
+<br>
+But when clicking in Upload button, nothing happened.<br>
+Please suggest, has it got anything to do with NuGet Packages difference in my machine.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4729576&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4729576&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4729576" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4729576/When-I-run-the-Upload-button-didnt-work-doh.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4729576&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4729576&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4729576" data-ref="3_4729576" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="6689526" msgid="4729576"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4693105_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4693105xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_question.gif" alt="Question"></td><td class="subject hover-container"><a class="message-link" name="4693105" parent="0" thread="4693105" href="http://www.codeproject.com/Messages/4693105/Nice-project-one-questin-though.aspx">Nice project .. one questin though</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">angeloa</span><span class="date">3-Nov-13  13:22</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=2298317">angeloa</a></span></td><td class="date"><span>3-Nov-13  13:22&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4693105_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="2298317" msgid="4693105" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4693105xx" onclick="RateMsg(2298317,4693105,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4693105xx" onclick="RateMsg(2298317,4693105,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I installed it, added the packages in Nuget and the ran it and at this point I am unable to have it store an image on the database.<br>
+<br>
+I did change the connection string but perhaps the packages are wrong somehow.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4693105&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4693105&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4693105" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4693105/Nice-project-one-questin-though.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4693105&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4693105&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4693105" data-ref="3_4693105" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="2298317" msgid="4693105"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4693516_h0" class="header hover-row">
+<td class="subject-line normal  vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4693516xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_answer.gif" alt="Answer"></td><td class="subject hover-container"><a class="message-link" name="4693516" parent="4693105" thread="4693105" href="http://www.codeproject.com/Messages/4693516/Re-Nice-project-one-questin-though.aspx">Re: Nice project .. one questin though</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">4-Nov-13  9:26</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>4-Nov-13  9:26&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4693516_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4693516" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4693516xx" onclick="RateMsg(629618,4693516,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4693516xx" onclick="RateMsg(629618,4693516,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4693105);" href="http://www.codeproject.com/Messages/4693105/Nice-project-one-questin-though.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Are you getting an error?<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4693516&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4693105" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4693516/Re-Nice-project-one-questin-though.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4693516&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4693516&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4693516" data-ref="3_4693516" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (1 vote)</span><span class="reportform" ownerid="629618" msgid="4693516"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4689252_h0" class="header hover-row root">
+<td class="subject-line normal  vote-lo" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4689252xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_idea.gif" alt="Suggestion"></td><td class="subject hover-container"><a class="message-link" name="4689252" parent="0" thread="4689252" href="http://www.codeproject.com/Messages/4689252/No-information-about-caching.aspx">No information about caching</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">hVostt</span><span class="date">29-Oct-13  1:19</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5167358">hVostt</a></span></td><td class="date"><span>29-Oct-13  1:19&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4689252_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="5167358" msgid="4689252" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4689252xx" onclick="RateMsg(5167358,4689252,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4689252xx" onclick="RateMsg(5167358,4689252,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Without information about caching, this post is almost meaningless. Where processing Etag? Where processing Last Modified? This is the most difficult, but very important in the decision. Please complete article.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4689252&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4689252&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4689252" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4689252/No-information-about-caching.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4689252&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4689252&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4689252" data-ref="3_4689252" class="rating-label" style="white-space:nowrap;"><span>1.00/5 (1 vote)</span><span class="reportform" ownerid="5167358" msgid="4689252"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4689355_h0" class="header hover-row">
+<td class="subject-line normal  vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4689355xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" alt="General"></td><td class="subject hover-container"><a class="message-link" name="4689355" parent="4689252" thread="4689252" href="http://www.codeproject.com/Messages/4689355/Re-No-information-about-caching.aspx">Re: No information about caching</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">29-Oct-13  3:28</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>29-Oct-13  3:28&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4689355_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4689355" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4689355xx" onclick="RateMsg(629618,4689355,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4689355xx" onclick="RateMsg(629618,4689355,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4689252);" href="http://www.codeproject.com/Messages/4689252/No-information-about-caching.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Excuse me? Why would this post be meaningless without a discussing caching? There's a lot of different solutions to caching. Going into caching is way outside the scope of this article and would result in an entirely new article since there are more solutions using a cache. Picking a good solution strongly depends on your specific implementation (Azure Cache, Client size, Server side etc.). But still, I don't see why is should fit in this article.<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4689355&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4689252" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4689355/Re-No-information-about-caching.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4689355&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4689355&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4689355" data-ref="3_4689355" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (1 vote)</span><span class="reportform" ownerid="629618" msgid="4689355"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4689392_h0" class="header hover-row">
+<td class="subject-line normal  vote-lo" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="56px" class="indent"><a name="xx4689392xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" alt="General"></td><td class="subject hover-container"><a class="message-link" name="4689392" parent="4689355" thread="4689252" href="http://www.codeproject.com/Messages/4689392/Re-No-information-about-caching.aspx">Re: No information about caching</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">hVostt</span><span class="date">29-Oct-13  3:58</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=5167358">hVostt</a></span></td><td class="date"><span>29-Oct-13  3:58&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4689392_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:56px;"><div class="voteform vertical" ownerid="5167358" msgid="4689392" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4689392xx" onclick="RateMsg(5167358,4689392,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4689392xx" onclick="RateMsg(5167358,4689392,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="56px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4689355);" href="http://www.codeproject.com/Messages/4689355/Re-No-information-about-caching.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>However, you have shown in the article, some examples. For example, a database. Although there are ways to store too much. Therefore, without the example of caching your article is half-empty. If you're just lazy, I'll understand <img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/smiley_smile.gif" align="top" alt="Smile | :)"> <br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4689392&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4689392&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4689252" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4689392/Re-No-information-about-caching.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4689392&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4689392&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4689392" data-ref="3_4689392" class="rating-label" style="white-space:nowrap;"><span>1.00/5 (4 votes)</span><span class="reportform" ownerid="5167358" msgid="4689392"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4671906_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4671906xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_question.gif" alt="Question"></td><td class="subject hover-container"><a class="message-link" name="4671906" parent="0" thread="4671906" href="http://www.codeproject.com/Messages/4671906/My-vote.aspx">My vote 5</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Rahat Yasir</span><span class="date">2-Oct-13  14:20</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9448060">Rahat Yasir</a></span></td><td class="date"><span>2-Oct-13  14:20&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4671906_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9448060" msgid="4671906" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4671906xx" onclick="RateMsg(9448060,4671906,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4671906xx" onclick="RateMsg(9448060,4671906,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Excellent<br>
+You get a 5 and a Bookmark from me.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4671906&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4671906&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4671906" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4671906/My-vote.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4671906&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4671906&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4671906" data-ref="3_4671906" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="9448060" msgid="4671906"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4671986_h0" class="header hover-row">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4671986xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_answer.gif" alt="Answer"></td><td class="subject hover-container"><a class="message-link" name="4671986" parent="4671906" thread="4671906" href="http://www.codeproject.com/Messages/4671986/Re-My-vote.aspx">Re: My vote 5</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">2-Oct-13  16:11</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>2-Oct-13  16:11&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4671986_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4671986" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4671986xx" onclick="RateMsg(629618,4671986,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4671986xx" onclick="RateMsg(629618,4671986,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4671906);" href="http://www.codeproject.com/Messages/4671906/My-vote.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Thank you, good to hear you like it.<br>
+Eduard<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4671986&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4671906" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4671986/Re-My-vote.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4671986&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4671986&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4671986" data-ref="3_4671986" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="629618" msgid="4671986"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4670481_h0" class="header hover-row root">
+<td class="subject-line normal  vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4670481xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" alt="General"></td><td class="subject hover-container"><a class="message-link" name="4670481" parent="0" thread="4670481" href="http://www.codeproject.com/Messages/4670481/Helpful-to-store-binary-data.aspx">Helpful to store binary data</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eone James</span><span class="date">1-Oct-13  1:34</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=9298318">Eone James</a></span></td><td class="date"><span>1-Oct-13  1:34&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4670481_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="9298318" msgid="4670481" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4670481xx" onclick="RateMsg(9298318,4670481,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4670481xx" onclick="RateMsg(9298318,4670481,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Entity Structure lets you make a product simply by producing value as well as applying cardboard boxes and outlines from the EF Custom made. Both of these strategies can often goal a pre-existing databases as well as make a brand new databases. Thanks to providing with an example code which shows the value of EF.<br>
+<div class="signature">I am an IT Manager in the leading <b><a href="http://www.elantechnologies.com/services/web-apps/asp-net-ms-sql-development/">.NET Development</a></b> company which offers best .NET Application Development using Microsoft .NET Framework as well as <b><a href="http://www.elantechnologies.com/services/web-apps/php-5-mysql-development/">PHP Development</a></b> services using PHP MySQL, ZendPHP, CakePHP Framework.</div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4670481&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4670481&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4670481" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4670481/Helpful-to-store-binary-data.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4670481&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4670481&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4670481" data-ref="3_4670481" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (1 vote)</span><span class="reportform" ownerid="9298318" msgid="4670481"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4670499_h0" class="header hover-row">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4670499xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" alt="General"></td><td class="subject hover-container"><a class="message-link" name="4670499" parent="4670481" thread="4670481" href="http://www.codeproject.com/Messages/4670499/Re-Helpful-to-store-binary-data.aspx">Re: Helpful to store binary data</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">1-Oct-13  2:12</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>1-Oct-13  2:12&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4670499_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4670499" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4670499xx" onclick="RateMsg(629618,4670499,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4670499xx" onclick="RateMsg(629618,4670499,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4670481);" href="http://www.codeproject.com/Messages/4670481/Helpful-to-store-binary-data.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Thanks for your comment, really appreciate it.<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+<a href="http://www.zonderpunt.nl/" target="_blank">http://www.zonderpunt.nl</a></div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4670499&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4670499&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4670481" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4670499/Re-Helpful-to-store-binary-data.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4670499&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4670499&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4670499" data-ref="3_4670499" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="629618" msgid="4670499"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667519_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4667519xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" alt="General"></td><td class="subject hover-container"><a class="message-link" name="4667519" parent="0" thread="4667519" href="http://www.codeproject.com/Messages/4667519/My-vote-of.aspx">My vote of 5</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">FernandoUY</span><span class="date">25-Sep-13  16:35</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=6251015">FernandoUY</a></span></td><td class="date"><span>25-Sep-13  16:35&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667519_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="6251015" msgid="4667519" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667519xx" onclick="RateMsg(6251015,4667519,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667519xx" onclick="RateMsg(6251015,4667519,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Great help. Even if the example is in ASP, you can use the code for Winforms and so. Thanks for sharing<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667519&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667519&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4667519" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4667519/My-vote-of.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4667519&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4667519&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4667519" data-ref="3_4667519" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="6251015" msgid="4667519"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667716_h0" class="header hover-row">
+<td class="subject-line normal  vote-lo" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4667716xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" alt="General"></td><td class="subject hover-container"><a class="message-link" name="4667716" parent="4667519" thread="4667519" href="http://www.codeproject.com/Messages/4667716/Re-My-vote-of.aspx">Re: My vote of 5</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">26-Sep-13  1:26</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>26-Sep-13  1:26&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667716_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4667716" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667716xx" onclick="RateMsg(629618,4667716,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667716xx" onclick="RateMsg(629618,4667716,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4667519);" href="http://www.codeproject.com/Messages/4667519/My-vote-of.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Thanks Fernando!<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+<a href="http://www.zonderpunt.nl/" target="_blank">http://www.zonderpunt.nl</a></div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667716&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667716&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4667519" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4667716/Re-My-vote-of.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4667716&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4667716&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4667716" data-ref="3_4667716" class="rating-label" style="white-space:nowrap;"><span>1.00/5 (1 vote)</span><span class="reportform" ownerid="629618" msgid="4667716"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667264_h0" class="header hover-row root">
+<td class="subject-line normal  vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4667264xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_question.gif" alt="Question"></td><td class="subject hover-container"><a class="message-link" name="4667264" parent="0" thread="4667264" href="http://www.codeproject.com/Messages/4667264/Minor-point-Image-datatype.aspx">Minor point... Image datatype?</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">gduncan411</span><span class="date">25-Sep-13  10:27</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=443743">gduncan411</a></span></td><td class="date"><span>25-Sep-13  10:27&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667264_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="443743" msgid="4667264" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667264xx" onclick="RateMsg(443743,4667264,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667264xx" onclick="RateMsg(443743,4667264,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">Just a minor point... The image SQL Server data type has been deprecated and shouldn't be used in any new development, <a href="http://technet.microsoft.com/en-us/library/ms187993.aspx">http://technet.microsoft.com/en-us/library/ms187993.aspx</a>[<a href="http://technet.microsoft.com/en-us/library/ms187993.aspx" target="_blank" title="New Window">^</a>]<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667264&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667264&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4667264" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4667264/Minor-point-Image-datatype.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4667264&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4667264&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4667264" data-ref="3_4667264" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (1 vote)</span><span class="reportform" ownerid="443743" msgid="4667264"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667397_h0" class="header hover-row">
+<td class="subject-line normal  vote-hi" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4667397xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_answer.gif" alt="Answer"></td><td class="subject hover-container"><a class="message-link" name="4667397" parent="4667264" thread="4667264" href="http://www.codeproject.com/Messages/4667397/Re-Minor-point-Image-datatype.aspx">Re: Minor point... Image datatype?</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">25-Sep-13  13:26</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>25-Sep-13  13:26&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667397_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4667397" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667397xx" onclick="RateMsg(629618,4667397,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667397xx" onclick="RateMsg(629618,4667397,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4667264);" href="http://www.codeproject.com/Messages/4667264/Minor-point-Image-datatype.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Oh wow, I didn't even know! Lets get that straight in future versions of the article. Thanks for the heads up!<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+<a href="http://www.zonderpunt.nl/" target="_blank">http://www.zonderpunt.nl</a></div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667397&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667397&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4667264" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4667397/Re-Minor-point-Image-datatype.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4667397&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4667397&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4667397" data-ref="3_4667397" class="rating-label" style="white-space:nowrap;"><span>5.00/5 (2 votes)</span><span class="reportform" ownerid="629618" msgid="4667397"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667185_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20px" class="indent"><a name="xx4667185xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_question.gif" alt="Question"></td><td class="subject hover-container"><a class="message-link" name="4667185" parent="0" thread="4667185" href="http://www.codeproject.com/Messages/4667185/Binary-data-made-easy.aspx">Binary data made easy</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Andy Bantly</span><span class="date">25-Sep-13  8:51</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=22">Andy Bantly</a></span></td><td class="date"><span>25-Sep-13  8:51&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667185_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:20px;"><div class="voteform vertical" ownerid="22" msgid="4667185" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667185xx" onclick="RateMsg(22,4667185,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667185xx" onclick="RateMsg(22,4667185,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="20px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2">I like to use base64 encoding to store binary data.  I also like to pre-encode my SQL statements as base64 and decode them before executing them.  In my opinion this is a great way to do ad-hoc SQL without worrying about some dooshbag trying to use injection hacks.<br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667185&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667185&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4667185" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4667185/Binary-data-made-easy.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4667185&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4667185&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4667185" data-ref="3_4667185" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="22" msgid="4667185"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667189_h0" class="header hover-row">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="38px" class="indent"><a name="xx4667189xx"></a><img height="16px" width="16px" align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_answer.gif" alt="Answer"></td><td class="subject hover-container"><a class="message-link" name="4667189" parent="4667185" thread="4667185" href="http://www.codeproject.com/Messages/4667189/Re-Binary-data-made-easy.aspx">Re: Binary data made easy</a> <a onclick="return Pin(this);" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#" title="Click to pin message"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px"></a><img alt="new" style="vertical-align:middle;height:12px;width:31px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/new12.png"><div class="mobile-only">
+	<span class="author">Eduard Keilholz</span><span class="date">25-Sep-13  8:55</span>
+</div></td><td class="icon"><img border="0" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/icn-member-16.gif" title="member" alt="member" height="16px"></td><td class="author"><span><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=629618">Eduard Keilholz</a></span></td><td class="date"><span>25-Sep-13  8:55&nbsp;</span></td>
+</tr>
+</tbody></table></td>
+</tr><tr id="F4667189_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+<td class="indent align-right" style="width:38px;"><div class="voteform vertical" ownerid="629618" msgid="4667189" votingtype="GoodOrBad" done="true"><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667189xx" onclick="RateMsg(629618,4667189,5,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/upvote16.png" alt="upvote" title="upvote" border="0" align="absmiddle"></a>
+<br><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#xx4667189xx" onclick="RateMsg(629618,4667189,1,0);"><img height="16px" width="16px" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/downvote16.png" alt="downvote" title="downvote" border="0" align="absmiddle"></a>
+</div><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" height="1px" width="38px" alt=""></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tbody><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return SwitchMessage(null,4667185);" href="http://www.codeproject.com/Messages/4667185/Binary-data-made-easy.aspx"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/arrow-up24.png" title="Go to Parent" style="width:16px;height:16px;border:0"></a></div>Hey Andy!<br>
+Thanks a lot for the compliment. Of course I'd like to advise developers to validate the incoming data before committing to a database or something similar. Dropzone.js does provide fairly good methods and of course server side, there are a lot more possibilities. However these are not within the scope of this article so I left those checks out.<br>
+<div class="signature">.: I love it when a plan comes together :.<br>
+<a href="http://www.zonderpunt.nl/" target="_blank">http://www.zonderpunt.nl</a></div><br></td>
+</tr><tr class="footer" style="vertical-align:top;">
+<td><a class="new-message" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667189&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=r" title="Reply">Reply</a>·<wbr><a class="nav-link" href="http://www.codeproject.com/script/Forums/Edit.aspx?fid=1843214&select=4667189&floc=/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET&action=e" title="Email">Email</a>·<wbr><a href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&sort=Position&spc=Relaxed&tid=4667185" title="View Thread">View&nbsp;Thread</a>·<wbr><a href="http://www.codeproject.com/Messages/4667189/Re-Binary-data-made-easy.aspx" title="Get permanent link">Permalink</a>·<wbr><a href="http://www.codeproject.com/script/Bookmarks/Add.aspx?obid=4667189&obtid=3&action=AddBookmark&bio=false&bis=small" title="Bookmark this post" onclick="return bookmarkMe(0,0,&#39;/script/Bookmarks/Ajax/Add.aspx?obid=4667189&amp;obtid=3&amp;action=AddBookmark&amp;bio=false&amp;bis=small&#39;,false, this, this);">Bookmark</a></td><td style="text-align:right;"><span id="MVF4667189" data-ref="3_4667189" class="rating-label" style="white-space:nowrap;"><span class="reportform" ownerid="629618" msgid="4667189"></span></span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td>
+</tr><tr>
+<td><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/t(1).gif" border="0" width="1px" height="5px" alt=""></td>
+</tr><tr>
+<td><table width="100%" cellpadding="2px" cellspacing="0">
+<tbody><tr class="footer">
+<td><span class="last-visit desktop-only tablet-only">Last Visit: 31-Dec-99  23:00 &nbsp; &nbsp; Last Update: 26-Aug-15  5:05</span></td><td><a rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&df=90&mpp=25&prof=True&sort=Position&view=Normal&spc=Relaxed">Refresh</a></td><td style="text-align:right;white-space:nowrap;"><input id="_mbnUrl" type="hidden" value="/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?fid=1843214&amp;df=90&amp;mpp=25&amp;prof=True&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;fr=17"><span class="nav-link selected">1</span></td>
+</tr>
+</tbody></table></td>
+</tr>
+</tbody></table>
+</div><p class="small-text"><img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_general.gif" width="16px" height="16px" alt="General"> General &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_news.gif" width="16px" height="16px" alt="News"> News &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_idea.gif" width="16px" height="16px" alt="Suggestion"> Suggestion &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_question.gif" width="16px" height="16px" alt="Question"> Question &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_bug.gif" width="16px" height="16px" alt="Bug"> Bug &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_answer.gif" width="16px" height="16px" alt="Answer"> Answer &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_joke.gif" width="16px" height="16px" alt="Joke"> Joke &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_rant.gif" width="16px" height="16px" alt="Rant"> Rant &nbsp;&nbsp; <img align="top" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/msg_admin.gif" width="16px" height="16px" alt="Admin"> Admin &nbsp;&nbsp; </p><p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+Shift+Left/Right to switch pages.</p>
+				
+
+			</div>
+			
+		</td>
+		<td width="170px" class="article-wing-right">
+			<div id="ctl00_RightSideBar" class="container-article-info">
+
+                <div id="RHSticky" class="container-article-info-sticky stuck" style="position: fixed; top: 10px; left: 1180.5px;">
+        			
+
+<div class="header">Info</div>
+<div class="article-summary">
+
+<a id="ctl00_InfoBox_ParentLink"></a>
+
+<table cellpadding="0" cellspacing="0" class="article-info">
+
+    
+
+    
+	
+
+	
+
+    
+
+	<tbody><tr><td nowrap="">First Posted&nbsp;</td><td nowrap="nowrap" class="value"><span itemprop="datePublished" content="2013-09-25">25 Sep 2013</span></td></tr>
+    
+
+	<tr><td colspan="2"></td></tr>
+	
+	
+</tbody></table>
+</div>
+
+				    
+
+				    <div style="width:160px;margin: 10px auto;">
+					    <div class="msg-160x600" data-format="160x600" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Web-Development/ASP-NET/Samples" data-tags="SQL-server-2005, C#, ASP.NET, SQL, Windows, .NET, SQL-Server, Beginner, Intermediate, SQL-Server-2008, C#4.0, Cloud,rating4.5"><noscript>&lt;a href="http://ad.doubleclick.net/N6839/jump/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=160x600;ord=635761803461335569?"&gt;&lt;img src="http://ad.doubleclick.net/N6839/ad/lqm.codeproject.site/Web-Development/ASP-NET/Samples;sz=160x600;ord=635761803461335569?"  width="160px" height="600px" /&gt;&lt;/a&gt;</noscript></div>
+				    </div>
+
+                    
+
+				    
+
+				    
+
+				    
+
+                    <div class="anchorLink gototop" id="gototop">
+                        <a id="ctl00_GoToTop" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET#_articleTop">Go to top</a>
+                    </div>
+
+				</div>
+
+			</div>
+		</td>
+		</tr></tbody></table>
+
+		
+		<div class="theme1-background" style="height:2px" id="stickyStop"></div>
+
+		<div class="extended tiny-text">
+			<div class="row">
+				<div class="float-left">
+					<a id="ctl00_PermaLink" itemprop="url" href="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Storing Images in SQL Server using EF and ASP.NET - CodeProject.html">Permalink</a> | 
+					<a id="ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a> |
+					<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+                    <a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a> |
+					<a id="ctl00_Mobile" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?display=Mobile">Mobile</a>
+					<br>
+								
+					
+					Web03 |
+					2.8.150819.1 |
+					Last Updated 24 Oct 2013								
+				</div>
+
+                <div id="ctl00_GoogleTranslate" class="translate float-left"><div class="skiptranslate goog-te-gadget" dir="ltr"><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/cleardot.gif" class="goog-te-gadget-icon" style="background-image: url(https://translate.googleapis.com/translate_static/img/te_ctrl3.gif); background-position: -65px 0px;"><span style="vertical-align: middle;"><a class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/cleardot.gif" width="1" height="1"><span style="border-left-width: 1px; border-left-style: solid; border-left-color: rgb(187, 187, 187);">​</span><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/cleardot.gif" width="1" height="1"><span style="color: rgb(155, 155, 155);">▼</span></a></span></div></div></div>      
+
+				<div class="float-right align-right">
+					Article Copyright 2013 by Eduard Keilholz<br>Everything else
+					Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2015 <br>
+				</div>
+
+				
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/Articles/658522/Storing-Images-in-SQL-Server-using-EF-and-ASP-NET?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div>
+</div>
+
+
+<div style="display:none;" id="dm_AdTable">
+	
+</div>
+<img id="ctl00_Audience" src="http://pubads.g.doubleclick.net/activity;dc_iu=/6839/DFPAudiencePixel;ord='635761803455710911';dc_seg=33704410?" style="border-width: 0px; height: 1px; width: 1px; display: none !important; visibility: hidden !important; opacity: 0 !important; background-position: 0px 0px;" width="0" height="0">
+
+
+
+<script type="text/javascript" language="Javascript" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/jquery.min.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/article.min.js"></script>
+<script type="text/javascript" language="Javascript" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/element.js"></script>
+<script type="text/javascript" language="Javascript" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/navbar.min.js"></script>
+<script type="text/javascript" language="Javascript" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/Notifications.min.js"></script>
+<script type="text/javascript" language="Javascript" src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/MemberProfilePopup.min.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+$(document).ready(function () { processCodeBlocks.Initialise('#contentdiv'); });
+function googleTranslateElementInit() {  new google.translate.TranslateElement({   pageLanguage: 'en',   layout: google.translate.TranslateElement.InlineLayout.SIMPLE,   autoDisplay: false,   gaTrack: true,   gaId: 'UA-1735123-1'},  'ctl00_GoogleTranslate');}
+$(document).ready(function() { anchorAnimate();
+$('#RHSticky').sticky($('#stickyStop'));
+$('#ctl00_Nav').sticky($('#stickyStop'));
+});
+$(document).ready(function() {   $('.alert-bar').fadeIn('slow');   $('.alert-bar a.close-notify').click(function() {      $('.alert-bar').fadeOut('fast');        return false;    });});
+var notificationAlert = new NotificationAlert('ctl00_MemberMenu_Messages_NotificationCount','Notifications','/script/Membership/Ajax/NotificationList.aspx');
+notificationAlert.initialise();
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ if(InitWatermark)InitWatermark('sb_tb', 'Search for articles, questions, tips');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');
+  sbar.blur(function() {
+ if (!oSrchFlt) {sfilter.hide(); sfilter.removeClass('open');}
+ srchBoxFoc=false;
+ });
+  sbar.focus(function() {
+ oSrchFlt=false; srchBoxFoc=true;
+ sfilter.show(); sfilter.addClass('open');
+ });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$('#clear-rate_ctl00_RateArticle_RCD').click(function () {    $('#ctl00_RateArticle_RCD').hide(); return false;});$("#ctl00_RateArticle_RateItemWrapper")   .removeClass("container-rating")   .hover( function() { $('#ctl00_RateArticle_RCD').fadeIn('fast'); },            function() { $('#ctl00_RateArticle_RCD').fadeOut('fast'); } );
+function PostBack_ctl00_RateArticle_RateItemWrapper() {
+  return rateItem(658522,2,1,true,true,0,'LargeStars');
+}
+
+                        function getVotesHistogram(objectId, objectTypeId, containerId, loadingId) {
+                            if (!$('#' + containerId).attr('alreadyRequested')){
+                                $.ajax({
+                                    url: '/script/Ratings/Ajax/Histogram.aspx?obid=' + objectId + '&obtid='+objectTypeId,
+                                    success: function (data) {
+                                        $('#' + containerId).html(data);
+                                        $('#' + loadingId).hide();
+                                    }
+                                });
+                                $('#' + containerId).attr('alreadyRequested', 'true');
+                            }
+                        }
+$(document).ready(function() {   new starRating('#ctl00_RateArticle_VoteFormDiv', PostBack_ctl00_RateArticle_RateItemWrapper,'ctl00_RateArticle');
+  $('#ctl00_RateArticle_RB').mouseenter(function() {     getVotesHistogram(658522,2   ,'ctl00_RateArticle_Histogram','ctl00_RateArticle_Loading');  })})
+$(document).ready(function() { $('#ctl00_RateArticle_SubmitRateBtn').hide(); });
+$(document).ready(function() { $('#ctl00_RateArticle_SubmitRateBtn').hide(); });function ChkRtctl00_RateArticle(val) {}
+
+forumDir = '/script/Forums/';
+allowReporting = false;
+allowRating = true;
+allowRatingDisplay = true;
+var smoothScroll = true;
+Selected        = -1;
+oldTitle        = document.title;
+minMessageScore = 1;
+minMessageScore = 5;
+abuseScore      = -2;
+spamScore       = -1;
+getRatingUrl    = '/script/Ratings/Ajax/GetRatings.aspx';
+getRatingRefKey = 'obrs';
+
+
+//]]>
+</script>
+
+
+
+<canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><div id="MemberProfilePopupDiv" class="raised box" style="display: none; position: absolute;"></div><div id="MemberProfilePopupDiv" class="raised box" style="display: none; position: absolute;"></div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./Storing Images in SQL Server using EF and ASP.NET - CodeProject_files/translate-32.png" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><div id="MemberProfilePopupDiv" class="raised box" style="display: none; position: absolute;"></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" style="visibility: visible; box-sizing: content-box; width: 860px; height: 263px; display: none;"></iframe></body></html>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DocumentModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DocumentEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Documents" EntityType="DocumentModel.Document" />
+  </EntityContainer>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocumentId" />
+    </Key>
+    <Property Type="Int32" Name="DocumentId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="Size" Nullable="false" />
+    <Property Type="String" Name="Type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="FileContent" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+  </EntityType>
+</Schema>
