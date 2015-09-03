@@ -1,0 +1,6 @@
+d:\Work\Workspace\Demo_.Net\FedexValidatePostalCodeWebServiceClient\bin\Debug\ValidatePostalCodeWebServiceClient.exe.config
+d:\Work\Workspace\Demo_.Net\FedexValidatePostalCodeWebServiceClient\bin\Debug\ValidatePostalCodeWebServiceClient.exe
+d:\Work\Workspace\Demo_.Net\FedexValidatePostalCodeWebServiceClient\bin\Debug\ValidatePostalCodeWebServiceClient.pdb
+d:\Work\Workspace\Demo_.Net\FedexValidatePostalCodeWebServiceClient\obj\Debug\ValidatePostalCodeWebServiceClient.csprojResolveAssemblyReference.cache
+d:\Work\Workspace\Demo_.Net\FedexValidatePostalCodeWebServiceClient\obj\Debug\ValidatePostalCodeWebServiceClient.exe
+d:\Work\Workspace\Demo_.Net\FedexValidatePostalCodeWebServiceClient\obj\Debug\ValidatePostalCodeWebServiceClient.pdb

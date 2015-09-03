@@ -10,3 +10,9 @@ C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample
 C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe
 C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.pdb
 C:\afeng\Workspace\.Net_Demo\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.csprojResolveAssemblyReference.cache
+D:\Work\Workspace\Demo_.Net\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe.config
+D:\Work\Workspace\Demo_.Net\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.exe
+D:\Work\Workspace\Demo_.Net\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.pdb
+D:\Work\Workspace\Demo_.Net\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.exe
+D:\Work\Workspace\Demo_.Net\UPSShipWSSample\ShipWSSample\bin\Debug\ShipWSSample.pdb
+D:\Work\Workspace\Demo_.Net\UPSShipWSSample\ShipWSSample\obj\Debug\ShipWSSample.csprojResolveAssemblyReference.cache

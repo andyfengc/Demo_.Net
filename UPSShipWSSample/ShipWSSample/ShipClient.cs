@@ -149,8 +149,6 @@ namespace ShipWSSample
                 shipment.Description = "New shipment ...";
 
                 // payment
-                ShipperType shipper = new ShipperType();
-                shipper.ShipperNumber = "1YA077";
                 PaymentInfoType paymentInfo = new PaymentInfoType();
                 ShipmentChargeType shpmentCharge = new ShipmentChargeType();
                 BillShipperType billShipper = new BillShipperType();
@@ -160,6 +158,10 @@ namespace ShipWSSample
                 ShipmentChargeType[] shpmentChargeArray = { shpmentCharge };
                 paymentInfo.ShipmentCharge = shpmentChargeArray;
                 shipment.PaymentInformation = paymentInfo;
+
+                // shipper
+                ShipperType shipper = new ShipperType();
+                shipper.ShipperNumber = "1YA077";
                 ShipWSSample.ShipWebReference.ShipAddressType shipperAddress =
                     new ShipWSSample.ShipWebReference.ShipAddressType();
                 String[] addressLine = { "88 Foster Crescent" };
@@ -168,9 +170,6 @@ namespace ShipWSSample
                 shipperAddress.PostalCode = "L5R4A2";
                 shipperAddress.StateProvinceCode = "ON";
                 shipperAddress.CountryCode = "CA";
-                shipperAddress.AddressLine = addressLine;
-
-                // shipper
                 shipper.Address = shipperAddress;
                 shipper.Name = "CATO";
                 shipper.AttentionName = "Ingram Micro - Mississauga";
@@ -210,6 +209,8 @@ namespace ShipWSSample
                 shipToPhone.Number = "(905) 123-1234";
                 shipTo.Phone = shipToPhone;
                 shipment.ShipTo = shipTo;
+
+                //service
                 ServiceType service = new ServiceType();
                 service.Code = "01";
                 shipment.Service = service;
@@ -225,8 +226,22 @@ namespace ShipWSSample
                 PackagingType packType = new PackagingType();
                 packType.Code = "02";
                 package.Packaging = packType;
-                PackageType[] pkgArray = { package };
+                // package 2
+                PackageType package2 = new PackageType();
+                PackageWeightType packageWeight2 = new PackageWeightType();
+                packageWeight2.Weight = "9";
+                ShipUnitOfMeasurementType uom2 = new ShipUnitOfMeasurementType();
+                uom2.Code = "LBS";
+                packageWeight2.UnitOfMeasurement = uom2;
+                package2.PackageWeight = packageWeight2;
+                PackagingType packType2 = new PackagingType();
+                packType2.Code = "02";
+                package2.Packaging = packType2;
+
+                PackageType[] pkgArray = { package, package2 };
                 shipment.Package = pkgArray;
+
+                // label
                 LabelSpecificationType labelSpec = new LabelSpecificationType();
                 LabelStockSizeType labelStockSize = new LabelStockSizeType();
                 labelStockSize.Height = "1";
