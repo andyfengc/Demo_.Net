@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AddressValidationWebServiceClient.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="AddressValidationWebServiceClient_WebReference_AddressValidationService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://wsbeta.fedex.com:443/web-services/addressvalidation</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>

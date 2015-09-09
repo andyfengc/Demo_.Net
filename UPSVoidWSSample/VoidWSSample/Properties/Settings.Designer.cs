@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AddressValidationWebServiceClient.Properties {
+namespace VoidWSSample.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,10 +26,10 @@ namespace AddressValidationWebServiceClient.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://wsbeta.fedex.com:443/web-services/addressvalidation")]
-        public string AddressValidationWebServiceClient_WebReference_AddressValidationService {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://wwwcie.ups.com/webservices/Void")]
+        public string VoidWSSample_VoidWebReference_VoidService {
             get {
-                return ((string)(this["AddressValidationWebServiceClient_WebReference_AddressValidationService"]));
+                return ((string)(this["VoidWSSample_VoidWebReference_VoidService"]));
             }
         }
     }

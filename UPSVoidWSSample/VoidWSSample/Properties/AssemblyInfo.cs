@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AddressValidationWebServiceClient")]
+[assembly: AssemblyTitle("Void WebService Sample")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("FedEx Corporation")]
-[assembly: AssemblyProduct("AddressValidationWebServiceClient")]
-[assembly: AssemblyCopyright("Copyright © FedEx Corporation 2010")]
+[assembly: AssemblyCompany("UPS")]
+[assembly: AssemblyProduct("VoidWSSample.Properties")]
+[assembly: AssemblyCopyright("Copyright © UPS 2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("71582bf8-69df-49dd-8a0e-0aba113de986")]
+[assembly: Guid("06ed343b-c72d-44b9-9b60-539bfb482b1b")]
 
 // Version information for an assembly consists of the following four values:
 //
