@@ -53,6 +53,11 @@
     </Compile>
     <Compile Include="TrackWSClient.cs" />
     <Compile Include="TrustAllCertificatePolicy.cs" />
+    <Compile Include="Web References\TrackWebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -63,17 +68,26 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\TrackWebReference\common.xsd" />
-    <None Include="Web References\TrackWebReference\Error1.xsd" />
+    <None Include="Web References\TrackWebReference\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TrackWebReference\Error1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web References\TrackWebReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\TrackWebReference\Track.wsdl" />
     <None Include="Web References\TrackWebReference\TrackResponse.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\TrackWebReference\TrackWebServiceSchema.xsd" />
-    <None Include="Web References\TrackWebReference\UPSSecurity.xsd" />
+    <None Include="Web References\TrackWebReference\TrackWebServiceSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\TrackWebReference\UPSSecurity.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -86,10 +100,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="C:\arun_UPS\UPS\codeworkspace\DodgeTrackSchema\Track.wsdl">
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="D:\Delete\ups\Track.wsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\TrackWebReference\</RelPath>
-      <UpdateFromURL>C:\arun_UPS\UPS\codeworkspace\DodgeTrackSchema\Track.wsdl</UpdateFromURL>
+      <UpdateFromURL>D:\Delete\ups\Track.wsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

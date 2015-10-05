@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+  <AccessLicenseNumber>4CF6E9703C30E4B6</AccessLicenseNumber>
+  <UserId>afeng.kobo</UserId>
+  <Password>Fc.ScmKobo</Password>
+</AccessRequest> 
+<?xml version="1.0"?>
+<ShipmentConfirmRequest xml:lang="en-US">
+  <Request>
+    <TransactionReference>
+      <CustomerContext>Customer Comment</CustomerContext>
+      <XpciVersion/>
+    </TransactionReference>
+    <RequestAction>ShipConfirm</RequestAction>
+    <RequestOption>validate</RequestOption>
+  </Request>
+  <LabelSpecification>
+    <LabelPrintMethod>
+      <!--<Code>GIF</Code>-->
+      <Code>ZPL</Code>
+      <Description>Zebra ZP 450</Description>
+    </LabelPrintMethod>
+    <LabelStockSize>
+      <Height>4</Height>
+      <Width>6</Width>
+    </LabelStockSize>
+
+    <HTTPUserAgent>Mozilla/4.5</HTTPUserAgent>
+    <LabelImageFormat>
+      <Code>GIF</Code>
+      <Description>gif</Description>
+    </LabelImageFormat>
+  </LabelSpecification>
+  <Shipment>
+   <RateInformation>
+      <NegotiatedRatesIndicator/> 
+    </RateInformation> 
+	<Description/>
+    <Shipper>
+      <Name>Shipper Name</Name>
+      <PhoneNumber>1234567890</PhoneNumber>
+      <ShipperNumber>1YA077</ShipperNumber>
+	  <TaxIdentificationNumber>1234567877</TaxIdentificationNumber>
+      <Address>
+    	<AddressLine1>88 Foster Crescent</AddressLine1>
+    	<City>Mississauga</City>
+    	<StateProvinceCode>ON</StateProvinceCode>
+    	<PostalCode>L5R4A2</PostalCode>
+    	<PostcodeExtendedLow></PostcodeExtendedLow>
+    	<CountryCode>CA</CountryCode>
+     </Address>
+    </Shipper>
+	<ShipTo>
+     <CompanyName>DEF Associates</CompanyName>
+      <AttentionName>Mr. John Smith</AttentionName>
+      <PhoneNumber>(905) 123-1234</PhoneNumber>
+      <Address>
+        <AddressLine1>5678 Yonge St.</AddressLine1>
+        <City>Markham</City>
+        <StateProvinceCode>ON</StateProvinceCode>
+        <PostalCode>M1G3T8</PostalCode>
+        <CountryCode>CA</CountryCode>
+      </Address>
+    </ShipTo>
+    <ShipFrom>
+      <CompanyName>Kobo Inc.</CompanyName>
+      <AttentionName>88 Foster Crescent</AttentionName>
+      <PhoneNumber>Toronto</PhoneNumber>
+	  <TaxIdentificationNumber>1234567877</TaxIdentificationNumber>
+      <Address>
+        <AddressLine1>Address Line</AddressLine1>
+        <City>toronto</City>
+    	<StateProvinceCode>ON</StateProvinceCode>
+    	<PostalCode>M6K1A7</PostalCode>
+    	<CountryCode>ca</CountryCode>
+      </Address>
+    </ShipFrom>
+     <PaymentInformation>
+      <Prepaid>
+        <BillShipper>
+          <AccountNumber>1YA077</AccountNumber>
+        </BillShipper>
+      </Prepaid>
+    </PaymentInformation>
+    <Service>
+      <Code>01</Code>
+      <Description>2nd Day Air</Description>
+    </Service>
+    <Package>
+      <PackagingType>
+        <Code>02</Code>
+        <Description>Customer Supplied</Description>
+      </PackagingType>
+      <Description>Package Description</Description>
+      <PackageWeight>
+        <UnitOfMeasurement>
+          <Code>LBS</Code>
+        </UnitOfMeasurement>
+        <Weight>1</Weight>
+      </PackageWeight>
+    </Package>
+  </Shipment>
+</ShipmentConfirmRequest> 

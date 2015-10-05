@@ -1,1 +1,7 @@
 c:\afeng\Workspace\.Net_Demo\TrackWSSample\TrackWSSample\bin\Debug\TrackWSSample.exe.config
+D:\Work\Workspace\Demo_.Net\UPSTrackWSSample\TrackWSSample\bin\Debug\TrackWSSample.exe.config
+D:\Work\Workspace\Demo_.Net\UPSTrackWSSample\TrackWSSample\bin\Debug\TrackWSSample.exe
+D:\Work\Workspace\Demo_.Net\UPSTrackWSSample\TrackWSSample\bin\Debug\TrackWSSample.pdb
+D:\Work\Workspace\Demo_.Net\UPSTrackWSSample\TrackWSSample\obj\Debug\TrackWSSample.exe
+D:\Work\Workspace\Demo_.Net\UPSTrackWSSample\TrackWSSample\obj\Debug\TrackWSSample.pdb
+D:\Work\Workspace\Demo_.Net\UPSTrackWSSample\TrackWSSample\obj\Debug\TrackWSSample.csprojResolveAssemblyReference.cache

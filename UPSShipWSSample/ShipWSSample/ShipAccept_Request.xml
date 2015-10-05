@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<AccessRequest>
+    <AccessLicenseNumber>4CF6E9703C30E4B6</AccessLicenseNumber>
+    <UserId>afeng.kobo</UserId>
+    <Password>Fc.ScmKobo</Password>
+</AccessRequest>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ShipmentAcceptRequest>
+    <Request>
+        <TransactionReference>
+            <CustomerContext>Customer Comment</CustomerContext>
+        </TransactionReference>
+        <RequestAction>ShipAccept</RequestAction>
+        <RequestOption>1</RequestOption>
+    </Request>
+    <ShipmentDigest>...</ShipmentDigest>
+</ShipmentAcceptRequest>

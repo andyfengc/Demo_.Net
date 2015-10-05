@@ -16,9 +16,9 @@ using System.Xml.Serialization;
 
 namespace ShipWSSample
 {
-    class ShipClient
+    public class WsShip
     {
-        static void Main()
+        public static void Run()
         {
             // Schedule shipment
             ScheduleShipment();
@@ -246,9 +246,12 @@ namespace ShipWSSample
                 LabelStockSizeType labelStockSize = new LabelStockSizeType();
                 labelStockSize.Height = "1";
                 labelStockSize.Width = "1";
+                //// for zpl
+                //labelStockSize.Height = "6";
+                //labelStockSize.Width = "4";
                 labelSpec.LabelStockSize = labelStockSize;
                 LabelImageFormatType labelImageFormat = new LabelImageFormatType();
-                //labelImageFormat.Code = "SPL";
+                //labelImageFormat.Code = "ZPL";
                 labelImageFormat.Code = "GIF";
                 labelSpec.LabelImageFormat = labelImageFormat;
                 shipmentRequest.LabelSpecification = labelSpec;
@@ -268,21 +271,6 @@ namespace ShipWSSample
                 ShipmentResponse shipmentResponse = shpSvc.ProcessShipment(shipmentRequest);
 
                 Console.WriteLine("The transaction was a " + shipmentResponse.Response.ResponseStatus.Description);
-
-                // output label image
-                string filename = @"c:\Users\afeng\Pictures\label.gif";
-                byte[] byteLabel;
-
-                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
-                {
-                    using (BinaryWriter writer = new BinaryWriter(fs))
-                    {
-                        byteLabel =
-                            Convert.FromBase64String(
-                                shipmentResponse.ShipmentResults.PackageResults.FirstOrDefault().ShippingLabel.GraphicImage);
-                        writer.Write(byteLabel);
-                    }
-                }
 
                 // output label html page
                 string htmlFilename = @"c:\Users\afeng\Pictures\label.html";

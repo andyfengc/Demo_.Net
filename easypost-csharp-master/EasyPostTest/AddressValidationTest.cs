@@ -50,9 +50,9 @@ namespace EasyPostTest
                 zip = "W1F7JY"
             };
 
-            caAddress.Create();
+            ukAddress.Create();
 
-            caAddress.Verify();
+            ukAddress.Verify();
 
             int a = 1;
         }
