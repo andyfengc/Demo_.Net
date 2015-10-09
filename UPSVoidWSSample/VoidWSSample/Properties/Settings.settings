@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="VoidWSSample_VoidWebReference_VoidService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">https://wwwcie.ups.com/webservices/Void</Value>
+      <Value Profile="(Default)">https://onlinetools.ups.com/webservices/Void</Value>
     </Setting>
   </Settings>
 </SettingsFile>

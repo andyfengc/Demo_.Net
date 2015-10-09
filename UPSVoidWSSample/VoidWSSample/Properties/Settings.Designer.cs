@@ -26,7 +26,7 @@ namespace VoidWSSample.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://wwwcie.ups.com/webservices/Void")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://onlinetools.ups.com/webservices/Void")]
         public string VoidWSSample_VoidWebReference_VoidService {
             get {
                 return ((string)(this["VoidWSSample_VoidWebReference_VoidService"]));
