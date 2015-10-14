@@ -212,9 +212,11 @@ namespace ShipWSSample
 
                 //service
                 ServiceType service = new ServiceType();
-                service.Code = "01";
+                //service.Code = "01"; // next day air
+                service.Code = "11";//ups standard
                 shipment.Service = service;
-
+                
+                
                 // package
                 PackageType package = new PackageType();
                 PackageWeightType packageWeight = new PackageWeightType();
@@ -259,9 +261,14 @@ namespace ShipWSSample
                 shipmentRequest.Shipment = shipment;
 
                 // label
-                //ShipmentTypeShipmentServiceOptions options = new ShipmentTypeShipmentServiceOptions();
+                ShipmentTypeShipmentServiceOptions options = new ShipmentTypeShipmentServiceOptions();
                 //options.LabelDelivery = new LabelDeliveryType();
-                //shipment.ShipmentServiceOptions = options;
+                shipment.ShipmentServiceOptions = options;
+
+                //// international form for paperless invoice
+                //InternationalFormType internationalForm = new InternationalFormType();
+                ////internationalForm.FormType;
+                //options.InternationalForms = internationalForm;
 
 
                 Console.WriteLine(shipmentRequest);
@@ -271,6 +278,22 @@ namespace ShipWSSample
                 ShipmentResponse shipmentResponse = shpSvc.ProcessShipment(shipmentRequest);
 
                 Console.WriteLine("The transaction was a " + shipmentResponse.Response.ResponseStatus.Description);
+
+                // output label image
+                string filename = @"c:\Users\afeng\Pictures\label.gif";
+                byte[] byteLabel;
+
+                using (FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    using (BinaryWriter writer = new BinaryWriter(fs))
+                    {
+                        byteLabel =
+                            Convert.FromBase64String(
+                                shipmentResponse.ShipmentResults.PackageResults.FirstOrDefault().ShippingLabel.GraphicImage);
+                        writer.Write(byteLabel);
+                    }
+                }
+
 
                 // output label html page
                 string htmlFilename = @"c:\Users\afeng\Pictures\label.html";

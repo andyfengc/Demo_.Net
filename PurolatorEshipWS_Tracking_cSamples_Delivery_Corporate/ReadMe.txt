@@ -1,0 +1,1 @@
+This zip contains a Microsoft Visual Studio 2008 for a sample web service client. It can be used to call the development section of Purolator Public Web Services. It includes web service reference already, but if you want to substitute it, you may recreate it from Visual Studio using downloaded wsdl file.
