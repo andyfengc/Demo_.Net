@@ -215,8 +215,8 @@ namespace ShipWSSample
                 //service.Code = "01"; // next day air
                 service.Code = "11";//ups standard
                 shipment.Service = service;
-                
-                
+
+
                 // package
                 PackageType package = new PackageType();
                 PackageWeightType packageWeight = new PackageWeightType();
@@ -265,10 +265,28 @@ namespace ShipWSSample
                 //options.LabelDelivery = new LabelDeliveryType();
                 shipment.ShipmentServiceOptions = options;
 
-                //// international form for paperless invoice
-                //InternationalFormType internationalForm = new InternationalFormType();
-                ////internationalForm.FormType;
-                //options.InternationalForms = internationalForm;
+                // international form for paperless invoice
+                InternationalFormType internationalForm = new InternationalFormType();
+                internationalForm.ReasonForExport = "SALE";
+                internationalForm.ExportDate = DateTime.Now.ToString("yyyyMMdd");
+                internationalForm.ExportingCarrier = "UPS";
+                internationalForm.InvoiceDate = DateTime.Now.ToString("yyyyMMdd");
+                internationalForm.CurrencyCode = "CAD";
+                internationalForm.FormType = new String[] { "01", "03" };
+                internationalForm.Contacts = new ContactType()
+                {
+                    SoldTo = new SoldToType()
+                    {
+                        Name = "andy",
+                        Address = new AddressType() { AddressLine = new String[] { "box 40" }, City = "Tornnn", CountryCode = "US", PostalCode = "M1S2S5", StateProvinceCode = "ON" }
+                    }
+                };
+
+                internationalForm.Product = new ProductType[]
+                {
+                    new ProductType() {ProducerInfo = "product1", Description = new String[] {"1233"},Unit = new UnitType() {Number = "1", UnitOfMeasurement = new UnitOfMeasurementType() {Code = "BG"},  Value = "1"}, OriginCountryCode = "CA", CommodityCode = "123456", NumberOfPackagesPerCommodity = "1", ProductWeight = new ProductWeightType() {UnitOfMeasurement = new UnitOfMeasurementType() {Code = "LBS"}, Weight = "12"}}
+                };
+                options.InternationalForms = internationalForm;
 
 
                 Console.WriteLine(shipmentRequest);
