@@ -248,12 +248,13 @@ namespace ShipWSSample
                 LabelStockSizeType labelStockSize = new LabelStockSizeType();
                 labelStockSize.Height = "1";
                 labelStockSize.Width = "1";
+                labelSpec.LabelStockSize = labelStockSize;
+                LabelImageFormatType labelImageFormat = new LabelImageFormatType();
                 //// for zpl
                 //labelStockSize.Height = "6";
                 //labelStockSize.Width = "4";
-                labelSpec.LabelStockSize = labelStockSize;
-                LabelImageFormatType labelImageFormat = new LabelImageFormatType();
                 //labelImageFormat.Code = "ZPL";
+                // for gif
                 labelImageFormat.Code = "GIF";
                 labelSpec.LabelImageFormat = labelImageFormat;
                 shipmentRequest.LabelSpecification = labelSpec;
@@ -267,12 +268,13 @@ namespace ShipWSSample
 
                 // international form for paperless invoice
                 InternationalFormType internationalForm = new InternationalFormType();
+                internationalForm.AdditionalDocumentIndicator = null;
                 internationalForm.ReasonForExport = "SALE";
                 internationalForm.ExportDate = DateTime.Now.ToString("yyyyMMdd");
                 internationalForm.ExportingCarrier = "UPS";
                 internationalForm.InvoiceDate = DateTime.Now.ToString("yyyyMMdd");
                 internationalForm.CurrencyCode = "CAD";
-                internationalForm.FormType = new String[] { "01", "03" };
+                internationalForm.FormType = new String[] { "01" };
                 internationalForm.Contacts = new ContactType()
                 {
                     SoldTo = new SoldToType()
@@ -296,6 +298,16 @@ namespace ShipWSSample
                 ShipmentResponse shipmentResponse = shpSvc.ProcessShipment(shipmentRequest);
 
                 Console.WriteLine("The transaction was a " + shipmentResponse.Response.ResponseStatus.Description);
+                
+                // output label base64 characters
+                string byteFileName = @"c:\Users\afeng\Pictures\label.txt";
+                using (FileStream fs = new FileStream(byteFileName, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    using (BinaryWriter sw = new BinaryWriter(fs))
+                    {
+                        sw.Write(shipmentResponse.ShipmentResults.PackageResults.FirstOrDefault().ShippingLabel.GraphicImage);
+                    }
+                }
 
                 // output label image
                 string filename = @"c:\Users\afeng\Pictures\label.gif";
