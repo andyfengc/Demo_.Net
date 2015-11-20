@@ -13,15 +13,11 @@ namespace PWSTestClient
         static void Main(string[] args)
         {
             TrackingTestClient.TestClient trackingClient = new TrackingTestClient.TestClient();
-            //trackingClient.CallGetDeliveryDetails();
-
-            //Console.WriteLine();
-            trackingClient.CallTrackPackagesByPin();
-
-            //Console.WriteLine();
+            trackingClient.CallGetDeliveryDetails();
+            //trackingClient.CallTrackPackagesByPin();
             //trackingClient.CallTrackPackagesByReference();
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }

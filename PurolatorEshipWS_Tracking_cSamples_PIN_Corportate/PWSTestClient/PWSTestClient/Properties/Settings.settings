@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PWSTestClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PWSTestClient_ServiceAvailabilityProxy_ServiceAvailabilityService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://devwebservices.purolator.com/PWS/V1/ServiceAvailability/ServiceAvailabilityService.asmx</Value>
+    </Setting>
+    <Setting Name="PWSTestClient_TrackingProxy_TrackingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://devwebservices.purolator.com/EWS/V1/Tracking/TrackingService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
