@@ -243,6 +243,17 @@ namespace ShipWSSample
                 PackageType[] pkgArray = { package, package2 };
                 shipment.Package = pkgArray;
 
+                // add delivery confirmation
+                PackageServiceOptionsType packageServiceOptions = new PackageServiceOptionsType();
+                package.PackageServiceOptions = packageServiceOptions;
+                package2.PackageServiceOptions = packageServiceOptions;
+                DeliveryConfirmationType deliveryConfirmation = new DeliveryConfirmationType();
+                //Service DCIS Type, The type of confirmation required upon delivery of the package. 
+                deliveryConfirmation.DCISType = "2"; //Delivery Confirmation Signature Required
+                // The delivery confirmation control number that confirms the package's delivery.
+                //deliveryConfirmation.DCISNumber = "xxxxxxxx";
+                packageServiceOptions.DeliveryConfirmation = deliveryConfirmation;
+
                 // label
                 LabelSpecificationType labelSpec = new LabelSpecificationType();
                 LabelStockSizeType labelStockSize = new LabelStockSizeType();
