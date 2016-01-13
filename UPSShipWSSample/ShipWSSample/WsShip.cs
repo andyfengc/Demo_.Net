@@ -196,12 +196,12 @@ namespace ShipWSSample
                 // ship to
                 ShipToType shipTo = new ShipToType();
                 ShipToAddressType shipToAddress = new ShipToAddressType();
-                String[] addressLine1 = { "5678 Yonge St." };
+                String[] addressLine1 = { "403 Burr Oak Drive" };
                 shipToAddress.AddressLine = addressLine1;
-                shipToAddress.City = "Markham";
-                shipToAddress.PostalCode = "M1G3T8";
-                shipToAddress.StateProvinceCode = "ON";
-                shipToAddress.CountryCode = "CA";
+                shipToAddress.City = "Oswego";
+                shipToAddress.PostalCode = "60543";
+                shipToAddress.StateProvinceCode = "IL";
+                shipToAddress.CountryCode = "US";
                 shipTo.Address = shipToAddress;
                 shipTo.AttentionName = "Mr. John Smith";
                 shipTo.Name = "DEF Associates";
@@ -243,16 +243,16 @@ namespace ShipWSSample
                 PackageType[] pkgArray = { package, package2 };
                 shipment.Package = pkgArray;
 
-                // add delivery confirmation
-                PackageServiceOptionsType packageServiceOptions = new PackageServiceOptionsType();
-                package.PackageServiceOptions = packageServiceOptions;
-                package2.PackageServiceOptions = packageServiceOptions;
-                DeliveryConfirmationType deliveryConfirmation = new DeliveryConfirmationType();
-                //Service DCIS Type, The type of confirmation required upon delivery of the package. 
-                deliveryConfirmation.DCISType = "2"; //Delivery Confirmation Signature Required
-                // The delivery confirmation control number that confirms the package's delivery.
-                //deliveryConfirmation.DCISNumber = "xxxxxxxx";
-                packageServiceOptions.DeliveryConfirmation = deliveryConfirmation;
+                // add delivery confirmation for package level
+                //PackageServiceOptionsType packageServiceOptions = new PackageServiceOptionsType();
+                //package.PackageServiceOptions = packageServiceOptions;
+                //package2.PackageServiceOptions = packageServiceOptions;
+                //DeliveryConfirmationType deliveryConfirmation = new DeliveryConfirmationType();
+                ////Service DCIS Type, The type of confirmation required upon delivery of the package. 
+                //deliveryConfirmation.DCISType = "2"; //Delivery Confirmation Signature Required
+                //// The delivery confirmation control number that confirms the package's delivery.
+                ////deliveryConfirmation.DCISNumber = "xxxxxxxx";
+                //packageServiceOptions.DeliveryConfirmation = deliveryConfirmation;
 
                 // label
                 LabelSpecificationType labelSpec = new LabelSpecificationType();
@@ -300,7 +300,10 @@ namespace ShipWSSample
                     new ProductType() {ProducerInfo = "product1", Description = new String[] {"1233"},Unit = new UnitType() {Number = "1", UnitOfMeasurement = new UnitOfMeasurementType() {Code = "BG"},  Value = "1"}, OriginCountryCode = "CA", CommodityCode = "123456", NumberOfPackagesPerCommodity = "1", ProductWeight = new ProductWeightType() {UnitOfMeasurement = new UnitOfMeasurementType() {Code = "LBS"}, Weight = "12"}}
                 };
                 options.InternationalForms = internationalForm;
-
+                // delivery confirmation for shipment level
+                DeliveryConfirmationType deliveryConfirmation = new DeliveryConfirmationType();
+                deliveryConfirmation.DCISType = "2";
+                options.DeliveryConfirmation = deliveryConfirmation;
 
                 Console.WriteLine(shipmentRequest);
                 System.Net.ServicePointManager.CertificatePolicy = new TrustAllCertificatePolicy();
