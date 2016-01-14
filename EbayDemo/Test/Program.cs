@@ -12,8 +12,11 @@ namespace Test
         private static void Main(string[] args)
         {
             OrderTest.GetOrders();
+            //OrderTest.GetOrderTransactions();
             //OrderTest.GetItemTransactions();
-
+            //OrderTest.GetSellerTransactions();
+            //OrderTest.GetMyeBaySelling();
+            OrderTest.GetSellingManagerSaleRecord();
         }
 
     }
