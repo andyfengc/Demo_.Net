@@ -11,12 +11,17 @@ namespace Test
         [STAThread]
         private static void Main(string[] args)
         {
-            OrderTest.GetOrders();
+            // production of kobo seller
+            //OrderTest.GetOrders();
             //OrderTest.GetOrderTransactions();
             //OrderTest.GetItemTransactions();
             //OrderTest.GetSellerTransactions();
             //OrderTest.GetMyeBaySelling();
-            OrderTest.GetSellingManagerSaleRecord();
+            //OrderTest.GetSellingManagerSaleRecord();
+
+            // sandbox of kobo seller
+            //SandboxTest.GetOrders();
+            SandboxTest.GetNewOrders();
         }
 
     }
