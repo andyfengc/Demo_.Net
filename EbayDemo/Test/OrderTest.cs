@@ -13,6 +13,7 @@ namespace Test
         {
             string endpoint = "https://api.ebay.com/wsapi";
             string callName = "GetOrders";
+            // site id: https://developer.ebay.com/DevZone/merchandising/docs/Concepts/SiteIDToGlobalID.html
             string siteId = "2";
             string version = "949";
             // Build the request URL
