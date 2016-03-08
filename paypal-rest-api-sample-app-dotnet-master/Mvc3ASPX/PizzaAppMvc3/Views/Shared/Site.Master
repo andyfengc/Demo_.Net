@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>    
+    <link href="../../Styles/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script src="<%: Url.Content("~/Scripts/jquery-1.7.1.min.js") %>" type="text/javascript"></script>
+    <script src="<%: Url.Content("~/Scripts/modernizr-1.7.min.js") %>" type="text/javascript"></script>
+</head>
+<body>
+    <div class="page">
+        <header> 
+            <% Html.RenderPartial("Navigator"); %> 
+        </header>
+        <section id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <footer>  
+                <div class="navbar navbar-fixed-bottom" id="footer">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <p class="pull-right">Powered by PayPal REST APIs</p>
+                        </div>
+                    </div>
+                </div>        
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
