@@ -1,5 +1,6 @@
 [http://paypal.github.io/PayPal-NET-SDK/](http://paypal.github.io/PayPal-NET-SDK/)
 
+[https://github.com/paypal/rest-api-sample-app-dotnet](https://github.com/paypal/rest-api-sample-app-dotnet)
 
 .NET Pizza Store App using PayPal REST APIs
 ===========================================
