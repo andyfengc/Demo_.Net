@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B14D8537-E6C6-46E7-BC73-47115346A31B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayPalAPISample</RootNamespace>
+    <AssemblyName>PayPalAPISample</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalCoreSDK, Version=1.6.0.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\PayPalCoreSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalMerchantSDK, Version=2.13.117.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\PayPalMerchantSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPalPermissionsSDK, Version=2.6.109.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\PayPalPermissionsSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="APICalls\AddressVerify.aspx" />
+    <Content Include="APICalls\BillAgreementUpdate.aspx" />
+    <Content Include="APICalls\BillOutstandingAmount.aspx" />
+    <Content Include="APICalls\BillUser.aspx" />
+    <Content Include="APICalls\calendar_icon.png" />
+    <Content Include="APICalls\CreateBillingAgreement.aspx" />
+    <Content Include="APICalls\CreateRecurringPaymentsProfile.aspx" />
+    <Content Include="APICalls\DoCapture.aspx" />
+    <Content Include="APICalls\DoDirectPayment.aspx" />
+    <Content Include="APICalls\DoExpressCheckoutPayment.aspx" />
+    <Content Include="APICalls\DoNonReferencedCredit.aspx" />
+    <Content Include="APICalls\DoReauthorization.aspx" />
+    <Content Include="APICalls\DoReferenceTransaction.aspx" />
+    <Content Include="APICalls\DoUATPAuthorization.aspx" />
+    <Content Include="APICalls\DoUATPExpressCheckoutPayment.aspx" />
+    <Content Include="APICalls\EnterBoarding.aspx" />
+    <Content Include="APICalls\GetBalance.aspx" />
+    <Content Include="APICalls\GetBoardingDetails.aspx" />
+    <Content Include="APICalls\GetExpressCheckoutDetails.aspx" />
+    <Content Include="APICalls\GetPalDetails.aspx" />
+    <Content Include="APICalls\GetRecurringPaymentsProfileDetails.aspx" />
+    <Content Include="APICalls\GetTransactionDetails.aspx" />
+    <Content Include="APICalls\ManagePendingTransactionStatus.aspx" />
+    <Content Include="APICalls\ManageRecurringPaymentsProfileStatus.aspx" />
+    <Content Include="APICalls\MassPay.aspx" />
+    <Content Include="APICalls\RefundTransaction.aspx" />
+    <Content Include="APICalls\ReverseTransaction.aspx" />
+    <Content Include="APICalls\sdk.css" />
+    <Content Include="APICalls\SetCustomerBillingAgreement.aspx" />
+    <Content Include="APICalls\SetExpressCheckout.aspx" />
+    <Content Include="APICalls\TransactionSearch.aspx" />
+    <Content Include="APICalls\UpdateRecurringPaymentsProfile.aspx" />
+    <Content Include="APIResponse.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="APICalls\GetBillingAgreementCustomerDetails.aspx" />
+    <Content Include="APICalls\DoAuthorization.aspx" />
+    <Content Include="APICalls\DoVoid.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="IPNListener.aspx" />
+    <Content Include="ShowError.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="APICalls\AddressVerify.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AddressVerify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\AddressVerify.aspx.designer.cs">
+      <DependentUpon>AddressVerify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\BillAgreementUpdate.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BillAgreementUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\BillAgreementUpdate.aspx.designer.cs">
+      <DependentUpon>BillAgreementUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\BillOutstandingAmount.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BillOutstandingAmount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\BillOutstandingAmount.aspx.designer.cs">
+      <DependentUpon>BillOutstandingAmount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\BillUser.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>BillUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\BillUser.aspx.designer.cs">
+      <DependentUpon>BillUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\CreateBillingAgreement.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CreateBillingAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\CreateBillingAgreement.aspx.designer.cs">
+      <DependentUpon>CreateBillingAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\CreateRecurringPaymentsProfile.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>CreateRecurringPaymentsProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\CreateRecurringPaymentsProfile.aspx.designer.cs">
+      <DependentUpon>CreateRecurringPaymentsProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoCapture.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoCapture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoCapture.aspx.designer.cs">
+      <DependentUpon>DoCapture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoDirectPayment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoDirectPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoDirectPayment.aspx.designer.cs">
+      <DependentUpon>DoDirectPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoExpressCheckoutPayment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoExpressCheckoutPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoExpressCheckoutPayment.aspx.designer.cs">
+      <DependentUpon>DoExpressCheckoutPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoNonReferencedCredit.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoNonReferencedCredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoNonReferencedCredit.aspx.designer.cs">
+      <DependentUpon>DoNonReferencedCredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoReauthorization.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoReauthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoReauthorization.aspx.designer.cs">
+      <DependentUpon>DoReauthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoReferenceTransaction.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoReferenceTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoReferenceTransaction.aspx.designer.cs">
+      <DependentUpon>DoReferenceTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoUATPAuthorization.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoUATPAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoUATPAuthorization.aspx.designer.cs">
+      <DependentUpon>DoUATPAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoUATPExpressCheckoutPayment.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoUATPExpressCheckoutPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoUATPExpressCheckoutPayment.aspx.designer.cs">
+      <DependentUpon>DoUATPExpressCheckoutPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\EnterBoarding.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>EnterBoarding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\EnterBoarding.aspx.designer.cs">
+      <DependentUpon>EnterBoarding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetBalance.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetBalance.aspx.designer.cs">
+      <DependentUpon>GetBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetBoardingDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetBoardingDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetBoardingDetails.aspx.designer.cs">
+      <DependentUpon>GetBoardingDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetExpressCheckoutDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetExpressCheckoutDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetExpressCheckoutDetails.aspx.designer.cs">
+      <DependentUpon>GetExpressCheckoutDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetPalDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetPalDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetPalDetails.aspx.designer.cs">
+      <DependentUpon>GetPalDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetRecurringPaymentsProfileDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetRecurringPaymentsProfileDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetRecurringPaymentsProfileDetails.aspx.designer.cs">
+      <DependentUpon>GetRecurringPaymentsProfileDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetTransactionDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetTransactionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetTransactionDetails.aspx.designer.cs">
+      <DependentUpon>GetTransactionDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\ManagePendingTransactionStatus.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManagePendingTransactionStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\ManagePendingTransactionStatus.aspx.designer.cs">
+      <DependentUpon>ManagePendingTransactionStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\ManageRecurringPaymentsProfileStatus.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ManageRecurringPaymentsProfileStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\ManageRecurringPaymentsProfileStatus.aspx.designer.cs">
+      <DependentUpon>ManageRecurringPaymentsProfileStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\MassPay.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>MassPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\MassPay.aspx.designer.cs">
+      <DependentUpon>MassPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\RefundTransaction.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>RefundTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\RefundTransaction.aspx.designer.cs">
+      <DependentUpon>RefundTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\ReverseTransaction.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ReverseTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\ReverseTransaction.aspx.designer.cs">
+      <DependentUpon>ReverseTransaction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\SetCustomerBillingAgreement.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SetCustomerBillingAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\SetCustomerBillingAgreement.aspx.designer.cs">
+      <DependentUpon>SetCustomerBillingAgreement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\SetExpressCheckout.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>SetExpressCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\SetExpressCheckout.aspx.designer.cs">
+      <DependentUpon>SetExpressCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\TransactionSearch.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>TransactionSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\TransactionSearch.aspx.designer.cs">
+      <DependentUpon>TransactionSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\UpdateRecurringPaymentsProfile.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>UpdateRecurringPaymentsProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\UpdateRecurringPaymentsProfile.aspx.designer.cs">
+      <DependentUpon>UpdateRecurringPaymentsProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APIResponse.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>APIResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APIResponse.aspx.designer.cs">
+      <DependentUpon>APIResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\Message.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetBillingAgreementCustomerDetails.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>GetBillingAgreementCustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\GetBillingAgreementCustomerDetails.aspx.designer.cs">
+      <DependentUpon>GetBillingAgreementCustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoAuthorization.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoAuthorization.aspx.designer.cs">
+      <DependentUpon>DoAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoVoid.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>DoVoid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APICalls\DoVoid.aspx.designer.cs">
+      <DependentUpon>DoVoid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IPNListener.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>IPNListener.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IPNListener.aspx.designer.cs">
+      <DependentUpon>IPNListener.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowError.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ShowError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowError.aspx.designer.cs">
+      <DependentUpon>ShowError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\DoAuthorizationForOrderPayment.aspx.cs">
+      <DependentUpon>DoAuthorizationForOrderPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\DoAuthorizationForOrderPayment.aspx.designer.cs">
+      <DependentUpon>DoAuthorizationForOrderPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\DoExpressCheckout.aspx.cs">
+      <DependentUpon>DoExpressCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\DoExpressCheckout.aspx.designer.cs">
+      <DependentUpon>DoExpressCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\ParallelPayment.aspx.cs">
+      <DependentUpon>ParallelPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\ParallelPayment.aspx.designer.cs">
+      <DependentUpon>ParallelPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\PaymentCapture.aspx.cs">
+      <DependentUpon>PaymentCapture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\PaymentCapture.aspx.designer.cs">
+      <DependentUpon>PaymentCapture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\RecurringPaymentsUsingCreditCard.aspx.cs">
+      <DependentUpon>RecurringPaymentsUsingCreditCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\RecurringPaymentsUsingCreditCard.aspx.designer.cs">
+      <DependentUpon>RecurringPaymentsUsingCreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\RequestResponse.aspx.cs">
+      <DependentUpon>RequestResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\RequestResponse.aspx.designer.cs">
+      <DependentUpon>RequestResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\SetExpressCheckoutForRecurringPayments.aspx.cs">
+      <DependentUpon>SetExpressCheckoutForRecurringPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\SetExpressCheckoutForRecurringPayments.aspx.designer.cs">
+      <DependentUpon>SetExpressCheckoutForRecurringPayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\SetExpressCheckoutPaymentAuthorization.aspx.cs">
+      <DependentUpon>SetExpressCheckoutPaymentAuthorization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\SetExpressCheckoutPaymentAuthorization.aspx.designer.cs">
+      <DependentUpon>SetExpressCheckoutPaymentAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UseCaseSamples\SetExpressCheckoutPaymentOrder.aspx.cs">
+      <DependentUpon>SetExpressCheckoutPaymentOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UseCaseSamples\SetExpressCheckoutPaymentOrder.aspx.designer.cs">
+      <DependentUpon>SetExpressCheckoutPaymentOrder.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="paypal_cert.p12" />
+    <Content Include="UseCaseSamples\DoAuthorizationForOrderPayment.aspx" />
+    <Content Include="UseCaseSamples\DoExpressCheckout.aspx" />
+    <Content Include="UseCaseSamples\ParallelPayment.aspx" />
+    <Content Include="UseCaseSamples\PaymentCapture.aspx" />
+    <Content Include="UseCaseSamples\RecurringPaymentsUsingCreditCard.aspx" />
+    <Content Include="UseCaseSamples\RequestResponse.aspx" />
+    <Content Include="UseCaseSamples\SetExpressCheckoutForRecurringPayments.aspx" />
+    <Content Include="UseCaseSamples\SetExpressCheckoutPaymentAuthorization.aspx" />
+    <Content Include="UseCaseSamples\SetExpressCheckoutPaymentOrder.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>3035</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
